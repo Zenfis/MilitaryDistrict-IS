@@ -64,6 +64,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FrameManager.cs" />
+    <Compile Include="Frames\frMilitaryDistrict.xaml.cs">
+      <DependentUpon>frMilitaryDistrict.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frTablesList.xaml.cs">
+      <DependentUpon>frTablesList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_database\Army.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
@@ -169,6 +176,14 @@
     <Compile Include="_database\sysdiagrams.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Page Include="Frames\frMilitaryDistrict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frTablesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -231,5 +246,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

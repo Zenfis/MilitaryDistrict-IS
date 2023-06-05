@@ -21,3 +21,7 @@ C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\MilitaryDistrict-I
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\MilitaryDistrict-IS.csproj.CopyComplete
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\MilitaryDistrict-IS.exe
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\MilitaryDistrict-IS.pdb
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frTablesList.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frTablesList.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryDistrict.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryDistrict.baml

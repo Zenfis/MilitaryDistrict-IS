@@ -23,6 +23,26 @@ namespace MilitaryDistrict_IS
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Frames.frTablesList());
+            FrameManager.MainFrame = MainFrame;
+        }
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                BackButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BackButton.Visibility = Visibility.Hidden;
+            }
+
+
+        }
+
+        private void Bth_Click(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.GoBack();
         }
     }
 }
