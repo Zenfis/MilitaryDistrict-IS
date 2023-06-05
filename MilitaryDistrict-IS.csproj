@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,111 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="_database\Army.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Brigade.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\CategoriesOfRank.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\CategoryOfMilitaryEquipment.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\CategoryOfMilitaryWeapon.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Commander.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Company.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Construction.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\ConstructionsInMilitaryBase.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Corps.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Departament.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Division.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\KindOfMilitaryEquipment.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\KindOfMilitaryWeapon_.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryBase.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryDistrict.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryDistrictDataBase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MilitaryDistrictDataBase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryDistrictDataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryDistrictDataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryEquipment.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryEquipmentsInMilitaryBase.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryWeapon.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryWeaponsInMilitaryBase.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\PartsOfMilitaryDistrict.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\PlacesOfDeployment.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Platoon.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Rank.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Soldier.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Specialty.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\SpecialtyOfSoldier.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\sp_helpdiagrams_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\sysdiagrams.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,13 +200,36 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="_database\MilitaryDistrictDataBase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MilitaryDistrictDataBase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="_database\MilitaryDistrictDataBase.edmx.diagram">
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_database\MilitaryDistrictDataBase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MilitaryDistrictDataBase.Context.cs</LastGenOutput>
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </Content>
+    <Content Include="_database\MilitaryDistrictDataBase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+      <LastGenOutput>MilitaryDistrictDataBase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
