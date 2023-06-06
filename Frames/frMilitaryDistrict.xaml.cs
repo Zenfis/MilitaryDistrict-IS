@@ -30,5 +30,47 @@ namespace MilitaryDistrict_IS.Frames
         {
 
         }
+
+        private void AddDistrict_Click(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frEditMilitaryDistrict(null));
+        }
+
+        private void Page_IsVisibleChanged_1(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (Visibility == Visibility.Visible)
+            {
+                Military_District_Information_SystemEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                dgMilitaryDistrict.ItemsSource = Military_District_Information_SystemEntities.GetContext().MilitaryDistrict.ToList();
+            }
+        }
+
+        private void EditThisDistrict_Click(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new Frames.frEditMilitaryDistrict((sender as Button).DataContext as _database.MilitaryDistrict));
+        }
+
+        private void DeleteDistrict_Click(object sender, RoutedEventArgs e)
+        {
+            var DtR = dgMilitaryDistrict.SelectedItems.Cast<MilitaryDistrict>().ToList();
+
+            if (MessageBox.Show($"Вы точно хотите удалить следующие{DtR.Count()} элементов?", "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Military_District_Information_SystemEntities.GetContext().MilitaryDistrict.RemoveRange(DtR);
+                    Military_District_Information_SystemEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+
+                    dgMilitaryDistrict.ItemsSource = Military_District_Information_SystemEntities.GetContext().MilitaryDistrict.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+
+            }
+        }
     }
 }

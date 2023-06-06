@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MilitaryDistrict_IS.Frames"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="frMilitaryDistrict">
+      Title="frMilitaryDistrict" IsVisibleChanged="Page_IsVisibleChanged_1">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Редактировать" Name="EditDistrict"/>
+                            <Button Content="Редактировать" Name="EditThisDistrict" Click="EditThisDistrict_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -39,14 +39,14 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="AddDistrict" Margin="0,8,0,17" Width="90">
+        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="AddDistrict" Margin="0,8,0,17" Width="90" Click="AddDistrict_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Удалить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Grid.Column="2" Name="DeleteDistrict" Margin="0,8,0,17" Width="90">
+        <Button Content="Удалить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Grid.Column="2" Name="DeleteDistrict" Margin="0,8,0,17" Width="90" Click="DeleteDistrict_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

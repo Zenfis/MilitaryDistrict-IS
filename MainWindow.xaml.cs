@@ -40,7 +40,7 @@ namespace MilitaryDistrict_IS
 
         }
 
-        private void Bth_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             FrameManager.MainFrame.GoBack();
         }

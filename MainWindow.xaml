@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <Rectangle Fill="#FF525252" StrokeThickness="0" Height="50" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
-        <Button Name="BackButton" Content="Назад" Margin="0,0,10,8" Background="#FFc2c2c2" FontFamily="Open Sans Light" FontSize="14" Foreground="#FF272727" HorizontalAlignment="Right" Width="75" Height="32" VerticalAlignment="Bottom">
+        <Button Name="BackButton" Content="Назад" Margin="0,0,10,8" Background="#FFc2c2c2" FontFamily="Open Sans Light" FontSize="14" Foreground="#FF272727" HorizontalAlignment="Right" Width="75" Height="32" VerticalAlignment="Bottom" Click="BackButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
