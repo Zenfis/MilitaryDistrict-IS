@@ -78,6 +78,9 @@
     <Compile Include="Frames\frPartsOfMilitaryDistrict.xaml.cs">
       <DependentUpon>frPartsOfMilitaryDistrict.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frSecret.xaml.cs">
+      <DependentUpon>frSecret.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frTablesList.xaml.cs">
       <DependentUpon>frTablesList.xaml</DependentUpon>
     </Compile>
@@ -199,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frPartsOfMilitaryDistrict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frSecret.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -44,5 +44,13 @@ namespace MilitaryDistrict_IS
         {
             FrameManager.MainFrame.GoBack();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.S && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                MainFrame.Navigate(new Frames.frSecret());
+            }
+        }
     }
 }
