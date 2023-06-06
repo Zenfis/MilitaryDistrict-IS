@@ -52,5 +52,13 @@
                 </Style>
             </Button.Resources>
         </Button>
+
+        <Button FontSize="12" Grid.Column="4" Width="134" MinWidth="135" Height="45" MinHeight="45" Content="Корпус" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="Button_Click_3">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
