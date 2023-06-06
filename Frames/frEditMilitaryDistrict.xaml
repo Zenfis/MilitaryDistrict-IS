@@ -40,7 +40,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        <Button Content="Сохранить" Grid.Row="6" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="AddDistrict" Margin="0,1,0,9" Width="116" Height="40" Click="SaveDistrict_Click" Grid.Column="1">
+        <Button Content="Сохранить" Grid.Row="6" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="SaveDistrict" Margin="0,1,0,9" Width="116" Height="40" Click="SaveDistrict_Click" Grid.Column="1">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

@@ -54,7 +54,7 @@ namespace MilitaryDistrict_IS.Frames
         {
             var DtR = dgMilitaryDistrict.SelectedItems.Cast<MilitaryDistrict>().ToList();
 
-            if (MessageBox.Show($"Вы точно хотите удалить следующие{DtR.Count()} элементов?", "Внимание",
+            if (MessageBox.Show($"Вы точно хотите удалить следующие {DtR.Count()} элементов?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try

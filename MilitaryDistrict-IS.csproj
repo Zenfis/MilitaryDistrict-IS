@@ -69,8 +69,14 @@
       <DependentUpon>frEditMilitaryDistrict.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Frames\frEditPartsOfMilitaryDistrict.xaml.cs">
+      <DependentUpon>frEditPartsOfMilitaryDistrict.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frMilitaryDistrict.xaml.cs">
       <DependentUpon>frMilitaryDistrict.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frPartsOfMilitaryDistrict.xaml.cs">
+      <DependentUpon>frPartsOfMilitaryDistrict.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frTablesList.xaml.cs">
       <DependentUpon>frTablesList.xaml</DependentUpon>
@@ -184,7 +190,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frEditPartsOfMilitaryDistrict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frMilitaryDistrict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frPartsOfMilitaryDistrict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

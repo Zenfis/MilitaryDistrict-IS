@@ -17,11 +17,11 @@ namespace MilitaryDistrict_IS._database
     
     public partial class Military_District_Information_SystemEntities : DbContext
     {
-        private static Military_District_Information_SystemEntities _context;
         public Military_District_Information_SystemEntities()
             : base("name=Military_District_Information_SystemEntities")
         {
         }
+        private static Military_District_Information_SystemEntities _context;
         public static Military_District_Information_SystemEntities GetContext()
         {
             if (_context == null)
