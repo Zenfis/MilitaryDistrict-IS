@@ -9,11 +9,7 @@
       Title="frMilitaryDistrict" IsVisibleChanged="Page_IsVisibleChanged_1">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="125"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="125"/>
-        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="357"/>
             <RowDefinition Height="63"/>
@@ -32,21 +28,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Редактировать таблицу" Grid.Row="1" FontFamily="Open Sans Light" Grid.Column="1" Margin="0,8,0,17" Width="216"  HorizontalAlignment="Center" Name="EditDistrict">
+        <Button Content="Добавить запись" Grid.Row="1" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="AddDistrict" Margin="10,9,0,16" Width="127" Click="AddDistrict_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="AddDistrict" Margin="0,8,0,17" Width="90" Click="AddDistrict_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Удалить" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Open Sans Light" Grid.Column="2" Name="DeleteDistrict" Margin="0,8,0,17" Width="90" Click="DeleteDistrict_Click">
+        <Button Content="Удалить выделенную(ые) запись(и)" Grid.Row="1" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="DeleteDistrict" Margin="576,10,0,15" Width="214" Click="DeleteDistrict_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
