@@ -35,5 +35,10 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frPartsOfMilitaryDistrict());
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frArmy());
+        }
     }
 }

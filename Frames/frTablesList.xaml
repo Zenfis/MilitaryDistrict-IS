@@ -28,16 +28,24 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="95"/>
         </Grid.ColumnDefinitions>
-        
+
         <Button FontSize="16" Grid.Column="1" Width="135" MinWidth="135" Height="45" MinHeight="45" Content="Военный округ" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="Button_Click">
             <Button.Resources>
-            <Style TargetType="{x:Type Border}">
-                <Setter Property="CornerRadius" Value="6"/>
-            </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
             </Button.Resources>
         </Button>
 
         <Button FontSize="12" Grid.Column="2" Width="135" MinWidth="135" Height="45" MinHeight="45" Content="Части военного округа" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="Button_Click_1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <Button FontSize="12" Grid.Column="3" Width="134" MinWidth="135" Height="45" MinHeight="45" Content="Армия" FontFamily="Open Sans Light" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Margin="8,0,0,0" Click="Button_Click_2">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

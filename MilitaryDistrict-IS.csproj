@@ -65,6 +65,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="FrameManager.cs" />
+    <Compile Include="Frames\frArmy.xaml.cs">
+      <DependentUpon>frArmy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditArmy.xaml.cs">
+      <DependentUpon>frEditArmy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frEditMilitaryDistrict.xaml.cs">
       <DependentUpon>frEditMilitaryDistrict.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -189,6 +195,14 @@
     <Compile Include="_database\sysdiagrams.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Page Include="Frames\frArmy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditArmy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frEditMilitaryDistrict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
