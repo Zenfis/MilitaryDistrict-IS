@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\App.xaml
-11964023118
+131548625476
 2-2072601735
-50-2129406341
+52-1294957091
 18-444558057
-Frames\frArmy.xaml;Frames\frCorps.xaml;Frames\frEditArmy.xaml;Frames\frEditCorps.xaml;Frames\frEditMilitaryDistrict.xaml;Frames\frEditPartsOfMilitaryDistrict.xaml;Frames\frMilitaryDistrict.xaml;Frames\frPartsOfMilitaryDistrict.xaml;Frames\frSecret.xaml;Frames\frTablesList.xaml;MainWindow.xaml;
+Frames\frArmy.xaml;Frames\frCorps.xaml;Frames\frDivision.xaml;Frames\frEditArmy.xaml;Frames\frEditCorps.xaml;Frames\frEditDivision.xaml;Frames\frEditMilitaryDistrict.xaml;Frames\frEditPartsOfMilitaryDistrict.xaml;Frames\frMilitaryDistrict.xaml;Frames\frPartsOfMilitaryDistrict.xaml;Frames\frSecret.xaml;Frames\frTablesList.xaml;MainWindow.xaml;
 
 True
 

@@ -71,11 +71,17 @@
     <Compile Include="Frames\frCorps.xaml.cs">
       <DependentUpon>frCorps.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frDivision.xaml.cs">
+      <DependentUpon>frDivision.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frEditArmy.xaml.cs">
       <DependentUpon>frEditArmy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditCorps.xaml.cs">
       <DependentUpon>frEditCorps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditDivision.xaml.cs">
+      <DependentUpon>frEditDivision.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditMilitaryDistrict.xaml.cs">
       <DependentUpon>frEditMilitaryDistrict.xaml</DependentUpon>
@@ -209,11 +215,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frDivision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frEditArmy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditCorps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditDivision.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
