@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MilitaryDistrict_IS.Frames"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="frCategoriesOfCategoriesOfRank">
+      Title="frCategoriesOfCategoriesOfRank" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>

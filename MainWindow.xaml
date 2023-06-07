@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MilitaryDistrict_IS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="800" KeyDown="Window_KeyDown">
+        Title="Информационная система" Height="520" Width="800" KeyDown="Window_KeyDown" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="95"/>

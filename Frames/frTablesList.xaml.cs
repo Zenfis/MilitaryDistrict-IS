@@ -70,5 +70,15 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frCategoriesOfRank());
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frMilitaryBase());
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            //FrameManager.MainFrame.Navigate(new frPlacesOfDeployment());
+        }
     }
 }
