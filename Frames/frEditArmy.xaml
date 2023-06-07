@@ -33,7 +33,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код части" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="163,6,0,0" Width="31"/>
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код части округа" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="163,6,0,0" Width="31"/>
         <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding PartsOfMilDistrId}" Grid.Row="4" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,0,0,20" HorizontalAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">

@@ -1,0 +1,46 @@
+﻿<Page x:Class="MilitaryDistrict_IS.Frames.frEditPlacesOfDeployment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MilitaryDistrict_IS.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="frEditPlacesOfDeployment">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="95" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Сохранить" Grid.Row="6" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="SavePlacesOfDeployment" Margin="0,1,0,1" Width="116" Grid.Column="1" Click="SavePlacesOfDeployment_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Название места дислокации" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="18" Height="18" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="161,0,0,0" Width="255"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding Settlement}" Grid.Row="4" MinHeight="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="148,2,0,2" HorizontalAlignment="Left">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+    </Grid>
+</Page>

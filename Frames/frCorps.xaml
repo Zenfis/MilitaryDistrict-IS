@@ -22,7 +22,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Код корпуса" Binding="{Binding Id}" Width="*"/>
                 <DataGridTextColumn Header="Название корпуса" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Код части" Binding="{Binding PartsOfMilDistrId}" Width="*"/>
+                <DataGridTextColumn Header="Код части округа" Binding="{Binding PartsOfMilDistrId}" Width="*"/>
                 <DataGridTextColumn Header="Код командира" Binding="{Binding CommanderId}" Width="*"/>
                 <DataGridTextColumn Header="Код армии" Binding="{Binding ArmyId}" Width="*"/>
                 <DataGridTemplateColumn Width="auto">
