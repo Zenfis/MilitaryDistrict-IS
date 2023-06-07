@@ -82,5 +82,12 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button FontSize="16" Grid.Column="4" Width="130" MinWidth="130" Height="45" MinHeight="45" Content="Должность" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" Margin="0,5,0,0" Click="Button_Click_7" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>

@@ -17,40 +17,40 @@ using System.Windows.Shapes;
 namespace MilitaryDistrict_IS.Frames
 {
     /// <summary>
-    /// Логика взаимодействия для frCommander.xaml
+    /// Логика взаимодействия для frRank.xaml
     /// </summary>
-    public partial class frCommander : Page
+    public partial class frRank : Page
     {
-        public frCommander()
+        public frRank()
         {
             InitializeComponent();
-            dgCommander.ItemsSource = Military_District_Information_SystemEntities.GetContext().Commander.ToList();
+            dgRank.ItemsSource = Military_District_Information_SystemEntities.GetContext().Rank.ToList();
         }
 
-        private void dgCommander_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dgRank_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void AddCommander_Click(object sender, RoutedEventArgs e)
+        private void AddRank_Click(object sender, RoutedEventArgs e)
         {
-            FrameManager.MainFrame.Navigate(new frEditCommander(null));
+            FrameManager.MainFrame.Navigate(new frEditRank(null));
         }
 
-        private void DeleteCommander_Click(object sender, RoutedEventArgs e)
+        private void DeleteRank_Click(object sender, RoutedEventArgs e)
         {
-            var a = dgCommander.SelectedItems.Cast<Commander>().ToList();
+            var a = dgRank.SelectedItems.Cast<Rank>().ToList();
 
             if (MessageBox.Show($"Вы точно хотите удалить следующие {a.Count()} элементов?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
                 {
-                    Military_District_Information_SystemEntities.GetContext().Commander.RemoveRange(a);
+                    Military_District_Information_SystemEntities.GetContext().Rank.RemoveRange(a);
                     Military_District_Information_SystemEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
 
-                    dgCommander.ItemsSource = Military_District_Information_SystemEntities.GetContext().Commander.ToList();
+                    dgRank.ItemsSource = Military_District_Information_SystemEntities.GetContext().Rank.ToList();
                 }
                 catch (Exception ex)
                 {
@@ -60,17 +60,17 @@ namespace MilitaryDistrict_IS.Frames
             }
         }
 
-        private void EditThisCommander_Click(object sender, RoutedEventArgs e)
+        private void EditThisRank_Click(object sender, RoutedEventArgs e)
         {
-            FrameManager.MainFrame.Navigate(new Frames.frEditCommander((sender as Button).DataContext as _database.Commander));
+            FrameManager.MainFrame.Navigate(new Frames.frEditRank((sender as Button).DataContext as _database.Rank));
         }
 
-        private void Page_IsVisibleChanged_1(object sender, DependencyPropertyChangedEventArgs e)
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
             {
                 Military_District_Information_SystemEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                dgCommander.ItemsSource = Military_District_Information_SystemEntities.GetContext().Commander.ToList();
+                dgRank.ItemsSource = Military_District_Information_SystemEntities.GetContext().Rank.ToList();
             }
         }
     }
