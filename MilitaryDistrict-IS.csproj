@@ -71,6 +71,9 @@
     <Compile Include="Frames\frBrigade.xaml.cs">
       <DependentUpon>frBrigade.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frCategoriesOfRank.xaml.cs">
+      <DependentUpon>frCategoriesOfRank.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frCommander.xaml.cs">
       <DependentUpon>frCommander.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,9 @@
     </Compile>
     <Compile Include="Frames\frEditBrigade.xaml.cs">
       <DependentUpon>frEditBrigade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditCategoriesOfRank.xaml.cs">
+      <DependentUpon>frEditCategoriesOfRank.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditCommander.xaml.cs">
       <DependentUpon>frEditCommander.xaml</DependentUpon>
@@ -233,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frCategoriesOfRank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frCommander.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditBrigade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditCategoriesOfRank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
