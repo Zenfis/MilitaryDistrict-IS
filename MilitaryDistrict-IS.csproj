@@ -68,6 +68,9 @@
     <Compile Include="Frames\frArmy.xaml.cs">
       <DependentUpon>frArmy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frBrigade.xaml.cs">
+      <DependentUpon>frBrigade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frCorps.xaml.cs">
       <DependentUpon>frCorps.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,9 @@
     </Compile>
     <Compile Include="Frames\frEditArmy.xaml.cs">
       <DependentUpon>frEditArmy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditBrigade.xaml.cs">
+      <DependentUpon>frEditBrigade.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditCorps.xaml.cs">
       <DependentUpon>frEditCorps.xaml</DependentUpon>
@@ -211,6 +217,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frBrigade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frCorps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -220,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditArmy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditBrigade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
