@@ -17,12 +17,10 @@ namespace MilitaryDistrict_IS._database
     
     public partial class Military_District_Information_SystemEntities : DbContext
     {
-
         public Military_District_Information_SystemEntities()
             : base("name=Military_District_Information_SystemEntities")
         {
         }
-
         private static Military_District_Information_SystemEntities _context;
         public static Military_District_Information_SystemEntities GetContext()
         {
@@ -30,7 +28,6 @@ namespace MilitaryDistrict_IS._database
                 _context = new Military_District_Information_SystemEntities();
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

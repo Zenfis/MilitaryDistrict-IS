@@ -140,5 +140,12 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button FontSize="16" Grid.Column="4" Width="130" MinWidth="130" Height="46" MinHeight="45" Content="Сооружение" FontFamily="Open Sans Light" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Margin="5,4,0,0" Click="Button_Click_15">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
