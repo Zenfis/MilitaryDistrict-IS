@@ -93,7 +93,7 @@ namespace MilitaryDistrict_IS.Frames
 
         private void Button_Click_13(object sender, RoutedEventArgs e)
         {
-            //FrameManager.MainFrame.Navigate(new frDepartment());
+            FrameManager.MainFrame.Navigate(new frDepartament());
         }
     }
 }
