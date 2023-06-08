@@ -77,6 +77,9 @@
     <Compile Include="Frames\frCommander.xaml.cs">
       <DependentUpon>frCommander.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frCompany.xaml.cs">
+      <DependentUpon>frCompany.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frCorps.xaml.cs">
       <DependentUpon>frCorps.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,9 @@
     </Compile>
     <Compile Include="Frames\frEditCommander.xaml.cs">
       <DependentUpon>frEditCommander.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditCompany.xaml.cs">
+      <DependentUpon>frEditCompany.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditCorps.xaml.cs">
       <DependentUpon>frEditCorps.xaml</DependentUpon>
@@ -259,6 +265,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frCorps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -280,6 +290,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditCommander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditCompany.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
