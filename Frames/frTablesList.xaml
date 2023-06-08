@@ -133,5 +133,12 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button FontSize="9" Grid.Column="3" Width="130" MinWidth="130" Height="46" MinHeight="45" Content="Сооружения военной части" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Margin="0,4,0,0" Click="Button_Click_14">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
