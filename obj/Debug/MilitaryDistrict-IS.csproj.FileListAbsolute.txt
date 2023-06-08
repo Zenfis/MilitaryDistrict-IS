@@ -93,3 +93,7 @@ C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSoldi
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSoldier.g.cs
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSoldier.baml
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSoldier.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSpecialtyOfSoldier.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSpecialtyOfSoldier.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSpecialtyOfSoldier.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSpecialtyOfSoldier.baml

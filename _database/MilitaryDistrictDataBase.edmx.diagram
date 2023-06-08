@@ -29,7 +29,7 @@
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.PlacesOfDeployment" Width="2" PointX="8.25" PointY="5.125" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Platoon" Width="1.5" PointX="12.75" PointY="7.625" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Rank" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" FillColor="255, 128, 0" />
-        <EntityTypeShape EntityType="Military_District_Information_SystemModel.Soldier" Width="1.5" PointX="20.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Military_District_Information_SystemModel.Soldier" Width="1.5" PointX="20.25" PointY="7.625" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Specialty" Width="1.5" PointX="20.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.SpecialtyOfSoldier" Width="2" PointX="22.5" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
