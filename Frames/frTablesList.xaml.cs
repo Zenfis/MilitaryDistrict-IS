@@ -85,5 +85,15 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frCompany());
         }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frPlatoon());
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            //FrameManager.MainFrame.Navigate(new frDepartment());
+        }
     }
 }

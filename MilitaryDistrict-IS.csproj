@@ -120,6 +120,9 @@
     <Compile Include="Frames\frEditPlacesOfDeployment.xaml.cs">
       <DependentUpon>frEditPlacesOfDeployment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frEditPlatoon.xaml.cs">
+      <DependentUpon>frEditPlatoon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frEditRank.xaml.cs">
       <DependentUpon>frEditRank.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,9 @@
     </Compile>
     <Compile Include="Frames\frPlacesOfDeployment.xaml.cs">
       <DependentUpon>frPlacesOfDeployment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frPlatoon.xaml.cs">
+      <DependentUpon>frPlatoon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frRank.xaml.cs">
       <DependentUpon>frRank.xaml</DependentUpon>
@@ -321,6 +327,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frEditPlatoon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frEditRank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -338,6 +348,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frPlacesOfDeployment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frPlatoon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
