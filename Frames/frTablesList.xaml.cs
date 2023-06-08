@@ -118,7 +118,7 @@ namespace MilitaryDistrict_IS.Frames
 
         private void Button_Click_18(object sender, RoutedEventArgs e)
         {
-            //FrameManager.MainFrame.Navigate(new frSpecialty());
+            FrameManager.MainFrame.Navigate(new frSpecialty());
         }
     }
 }
