@@ -105,5 +105,20 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frConstruction());
         }
+
+        private void Button_Click_16(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frSoldier());
+        }
+
+        private void Button_Click_17(object sender, RoutedEventArgs e)
+        {
+            //FrameManager.MainFrame.Navigate(new frSpecialtyOfSoldier());
+        }
+
+        private void Button_Click_18(object sender, RoutedEventArgs e)
+        {
+            //FrameManager.MainFrame.Navigate(new frSpecialty());
+        }
     }
 }

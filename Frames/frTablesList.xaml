@@ -147,5 +147,26 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button FontSize="14" Grid.Column="1" Width="130" MinWidth="130" Height="46" MinHeight="45" Content="Военнослужащий" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Margin="0,4,0,0" Click="Button_Click_16">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button FontSize="8" Grid.Column="2" Width="130" MinWidth="130" Height="46" MinHeight="45" Content="Специальность военнослужащего" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Margin="0,4,0,0" Click="Button_Click_17">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button FontSize="10" Grid.Column="3" Width="130" MinWidth="130" Height="46" MinHeight="45" Content="Воинская специальность" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Margin="0,4,0,0" Click="Button_Click_18">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
