@@ -21,6 +21,11 @@ namespace MilitaryDistrict_IS._database
             : base("name=Military_District_Information_SystemEntities")
         {
         }
+    
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
         private static Military_District_Information_SystemEntities _context;
         public static Military_District_Information_SystemEntities GetContext()
         {
@@ -28,11 +33,6 @@ namespace MilitaryDistrict_IS._database
                 _context = new Military_District_Information_SystemEntities();
             return _context;
         }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
         public virtual DbSet<Army> Army { get; set; }
         public virtual DbSet<Brigade> Brigade { get; set; }
         public virtual DbSet<CategoriesOfRank> CategoriesOfRank { get; set; }

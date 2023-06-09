@@ -133,7 +133,7 @@ namespace MilitaryDistrict_IS.Frames
 
         private void Button_Click_21(object sender, RoutedEventArgs e)
         {
-            //FrameManager.MainFrame.Navigate(new frCategoryOfMilitaryWeapon());
+            FrameManager.MainFrame.Navigate(new frCategoryOfMilitaryWeapon());
         }
 
         private void Button_Click_22(object sender, RoutedEventArgs e)
