@@ -101,3 +101,7 @@ C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSpeci
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSpecialty.g.cs
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditSpecialty.baml
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frSpecialty.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditMilitaryWeaponsInMilitaryBase.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryWeaponsInMilitaryBase.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditMilitaryWeaponsInMilitaryBase.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryWeaponsInMilitaryBase.baml

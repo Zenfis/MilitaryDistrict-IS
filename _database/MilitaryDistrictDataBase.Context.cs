@@ -21,6 +21,7 @@ namespace MilitaryDistrict_IS._database
             : base("name=Military_District_Information_SystemEntities")
         {
         }
+
         private static Military_District_Information_SystemEntities _context;
         public static Military_District_Information_SystemEntities GetContext()
         {
