@@ -128,8 +128,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KindOfMilitaryWeapon_">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon_">
+    <EntitySetMapping Name="KindOfMilitaryWeapon">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon">
         <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />

@@ -125,6 +125,9 @@
     <Compile Include="Frames\frEditDivision.xaml.cs">
       <DependentUpon>frEditDivision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frEditKindOfMilitaryWeapon.xaml.cs">
+      <DependentUpon>frEditKindOfMilitaryWeapon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frEditMilitaryBase.xaml.cs">
       <DependentUpon>frEditMilitaryBase.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,9 @@
     </Compile>
     <Compile Include="Frames\frEditSpecialtyOfSoldier.xaml.cs">
       <DependentUpon>frEditSpecialtyOfSoldier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frKindOfMilitaryWeapon.xaml.cs">
+      <DependentUpon>frKindOfMilitaryWeapon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frMilitaryBase.xaml.cs">
       <DependentUpon>frMilitaryBase.xaml</DependentUpon>
@@ -237,7 +243,7 @@
     <Compile Include="_database\KindOfMilitaryEquipment.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="_database\KindOfMilitaryWeapon_.cs">
+    <Compile Include="_database\KindOfMilitaryWeapon.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\MilitaryBase.cs">
@@ -383,6 +389,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frEditKindOfMilitaryWeapon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frEditMilitaryBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -424,6 +434,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditSpecialtyOfSoldier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frKindOfMilitaryWeapon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

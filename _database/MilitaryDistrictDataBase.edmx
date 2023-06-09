@@ -1034,7 +1034,7 @@
           <NavigationProperty Name="CategoryOfMilitaryEquipment" Relationship="Self.FK_KindOfMilitaryEquipment_CategoryOfMilitaryEquipment" FromRole="KindOfMilitaryEquipment" ToRole="CategoryOfMilitaryEquipment" />
           <NavigationProperty Name="MilitaryEquipment" Relationship="Self.FK_MilitaryEquipment_KindOfMilitaryEquipment" FromRole="KindOfMilitaryEquipment" ToRole="MilitaryEquipment" />
         </EntityType>
-        <EntityType Name="KindOfMilitaryWeapon_">
+        <EntityType Name="KindOfMilitaryWeapon">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -1275,7 +1275,7 @@
         </Association>
         <Association Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
           <End Role="CategoryOfMilitaryWeapon" Type="Self.CategoryOfMilitaryWeapon" Multiplicity="0..1" />
-          <End Role="KindOfMilitaryWeapon_" Type="Self.KindOfMilitaryWeapon_" Multiplicity="*" />
+          <End Role="KindOfMilitaryWeapon_" Type="Military_District_Information_SystemModel.KindOfMilitaryWeapon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CategoryOfMilitaryWeapon">
               <PropertyRef Name="Id" />
@@ -1502,7 +1502,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_">
-          <End Role="KindOfMilitaryWeapon_" Type="Self.KindOfMilitaryWeapon_" Multiplicity="0..1" />
+          <End Role="KindOfMilitaryWeapon_" Type="Military_District_Information_SystemModel.KindOfMilitaryWeapon" Multiplicity="0..1" />
           <End Role="MilitaryWeapon" Type="Self.MilitaryWeapon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KindOfMilitaryWeapon_">
@@ -1647,7 +1647,7 @@
           <EntitySet Name="Departament" EntityType="Self.Departament" />
           <EntitySet Name="Division" EntityType="Self.Division" />
           <EntitySet Name="KindOfMilitaryEquipment" EntityType="Self.KindOfMilitaryEquipment" />
-          <EntitySet Name="KindOfMilitaryWeapon_" EntityType="Self.KindOfMilitaryWeapon_" />
+          <EntitySet Name="KindOfMilitaryWeapon" EntityType="Military_District_Information_SystemModel.KindOfMilitaryWeapon" />
           <EntitySet Name="MilitaryBase" EntityType="Self.MilitaryBase" />
           <EntitySet Name="MilitaryDistrict" EntityType="Self.MilitaryDistrict" />
           <EntitySet Name="MilitaryEquipment" EntityType="Self.MilitaryEquipment" />
@@ -1688,7 +1688,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" Association="Self.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
             <End Role="CategoryOfMilitaryWeapon" EntitySet="CategoryOfMilitaryWeapon" />
-            <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
+            <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon" />
           </AssociationSet>
           <AssociationSet Name="FK_MilitaryWeapon_CategoryOfMilitaryWeapon" Association="Self.FK_MilitaryWeapon_CategoryOfMilitaryWeapon">
             <End Role="CategoryOfMilitaryWeapon" EntitySet="CategoryOfMilitaryWeapon" />
@@ -1763,7 +1763,7 @@
             <End Role="MilitaryEquipment" EntitySet="MilitaryEquipment" />
           </AssociationSet>
           <AssociationSet Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_" Association="Self.FK_MilitaryWeapon_KindOfMilitaryWeapon_">
-            <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
+            <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon" />
             <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
           </AssociationSet>
           <AssociationSet Name="FK_MilitaryBase_PlacesOfDeployment" Association="Self.FK_MilitaryBase_PlacesOfDeployment">
@@ -1981,8 +1981,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="KindOfMilitaryWeapon_">
-            <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon_">
+          <EntitySetMapping Name="KindOfMilitaryWeapon">
+            <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon">
               <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />

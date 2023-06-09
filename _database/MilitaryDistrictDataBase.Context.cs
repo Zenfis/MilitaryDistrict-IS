@@ -21,7 +21,6 @@ namespace MilitaryDistrict_IS._database
             : base("name=Military_District_Information_SystemEntities")
         {
         }
-
         private static Military_District_Information_SystemEntities _context;
         public static Military_District_Information_SystemEntities GetContext()
         {
@@ -47,7 +46,7 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Departament> Departament { get; set; }
         public virtual DbSet<Division> Division { get; set; }
         public virtual DbSet<KindOfMilitaryEquipment> KindOfMilitaryEquipment { get; set; }
-        public virtual DbSet<KindOfMilitaryWeapon_> KindOfMilitaryWeapon_ { get; set; }
+        public virtual DbSet<KindOfMilitaryWeapon> KindOfMilitaryWeapon { get; set; }
         public virtual DbSet<MilitaryBase> MilitaryBase { get; set; }
         public virtual DbSet<MilitaryDistrict> MilitaryDistrict { get; set; }
         public virtual DbSet<MilitaryEquipment> MilitaryEquipment { get; set; }

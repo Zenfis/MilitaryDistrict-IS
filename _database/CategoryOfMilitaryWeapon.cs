@@ -17,7 +17,7 @@ namespace MilitaryDistrict_IS._database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CategoryOfMilitaryWeapon()
         {
-            this.KindOfMilitaryWeapon_ = new HashSet<KindOfMilitaryWeapon_>();
+            this.KindOfMilitaryWeapon_ = new HashSet<KindOfMilitaryWeapon>();
             this.MilitaryWeapon = new HashSet<MilitaryWeapon>();
         }
     
@@ -25,7 +25,7 @@ namespace MilitaryDistrict_IS._database
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KindOfMilitaryWeapon_> KindOfMilitaryWeapon_ { get; set; }
+        public virtual ICollection<KindOfMilitaryWeapon> KindOfMilitaryWeapon_ { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MilitaryWeapon> MilitaryWeapon { get; set; }
     }
