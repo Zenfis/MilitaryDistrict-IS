@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код категории вооружения" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="18" Height="18" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="163,0,0,0" Width="281"/>
-        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding CategoryOfMilitaryWeaponId}" Grid.Row="4" MinHeight="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,2,0,2" HorizontalAlignment="Center">
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding KindOfMilitaryWeaponId}" Grid.Row="4" MinHeight="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,2,0,2" HorizontalAlignment="Center">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

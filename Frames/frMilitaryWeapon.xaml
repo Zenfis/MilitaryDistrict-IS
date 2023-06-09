@@ -21,7 +21,7 @@
         <DataGrid x:Name="dgMilitaryWeapon" AutoGenerateColumns="False" FontFamily="Open Sans Light" Grid.ColumnSpan="3" IsReadOnly="True" SelectionChanged="dgMilitaryWeapon_SelectionChanged" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Код вооружения" Binding="{Binding Id}" Width="*"/>
-                <DataGridTextColumn Header="Код категории вооружения" Binding="{Binding CategoryOfMilitaryWeaponId}" Width="*"/>
+                <DataGridTextColumn Header="Код категории вооружения" Binding="{Binding KindOfMilitaryWeaponId}" Width="*"/>
                 <DataGridTextColumn Header="Название вооружения" Binding="{Binding Name}" Width="*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>

@@ -261,7 +261,7 @@
     <Compile Include="_database\KindOfMilitaryEquipment.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="_database\KindOfMilitaryWeapon.cs">
+    <Compile Include="_database\KindOfMilitaryWeapon_.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\MilitaryBase.cs">

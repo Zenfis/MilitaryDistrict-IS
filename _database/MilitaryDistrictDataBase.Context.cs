@@ -33,11 +33,10 @@ namespace MilitaryDistrict_IS._database
                 _context = new Military_District_Information_SystemEntities();
             return _context;
         }
-        public virtual DbSet<Army> Army { get; set; }
+    public virtual DbSet<Army> Army { get; set; }
         public virtual DbSet<Brigade> Brigade { get; set; }
         public virtual DbSet<CategoriesOfRank> CategoriesOfRank { get; set; }
         public virtual DbSet<CategoryOfMilitaryEquipment> CategoryOfMilitaryEquipment { get; set; }
-        public virtual DbSet<CategoryOfMilitaryWeapon> CategoryOfMilitaryWeapon { get; set; }
         public virtual DbSet<Commander> Commander { get; set; }
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<Construction> Construction { get; set; }
@@ -46,12 +45,10 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Departament> Departament { get; set; }
         public virtual DbSet<Division> Division { get; set; }
         public virtual DbSet<KindOfMilitaryEquipment> KindOfMilitaryEquipment { get; set; }
-        public virtual DbSet<KindOfMilitaryWeapon> KindOfMilitaryWeapon { get; set; }
         public virtual DbSet<MilitaryBase> MilitaryBase { get; set; }
         public virtual DbSet<MilitaryDistrict> MilitaryDistrict { get; set; }
         public virtual DbSet<MilitaryEquipment> MilitaryEquipment { get; set; }
         public virtual DbSet<MilitaryEquipmentsInMilitaryBase> MilitaryEquipmentsInMilitaryBase { get; set; }
-        public virtual DbSet<MilitaryWeapon> MilitaryWeapon { get; set; }
         public virtual DbSet<MilitaryWeaponsInMilitaryBase> MilitaryWeaponsInMilitaryBase { get; set; }
         public virtual DbSet<PartsOfMilitaryDistrict> PartsOfMilitaryDistrict { get; set; }
         public virtual DbSet<PlacesOfDeployment> PlacesOfDeployment { get; set; }
@@ -61,6 +58,9 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Specialty> Specialty { get; set; }
         public virtual DbSet<SpecialtyOfSoldier> SpecialtyOfSoldier { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<CategoryOfMilitaryWeapon> CategoryOfMilitaryWeapon { get; set; }
+        public virtual DbSet<KindOfMilitaryWeapon_> KindOfMilitaryWeapon_ { get; set; }
+        public virtual DbSet<MilitaryWeapon> MilitaryWeapon { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

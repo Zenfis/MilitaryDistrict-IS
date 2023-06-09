@@ -24,7 +24,7 @@ namespace MilitaryDistrict_IS.Frames
         public frKindOfMilitaryWeapon()
         {
             InitializeComponent();
-            dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon.ToList();
+            dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon_.ToList();
         }
 
         private void dgKindOfMilitaryWeapon_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,18 +39,18 @@ namespace MilitaryDistrict_IS.Frames
 
         private void DeleteKindOfMilitaryWeapon_Click(object sender, RoutedEventArgs e)
         {
-            var a = dgKindOfMilitaryWeapon.SelectedItems.Cast<KindOfMilitaryWeapon>().ToList();
+            var a = dgKindOfMilitaryWeapon.SelectedItems.Cast<KindOfMilitaryWeapon_>().ToList();
 
             if (MessageBox.Show($"Вы точно хотите удалить следующие {a.Count()} элементов?", "Внимание",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
                 {
-                    Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon.RemoveRange(a);
+                    Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon_.RemoveRange(a);
                     Military_District_Information_SystemEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены");
 
-                    dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon.ToList();
+                    dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon_.ToList();
                 }
                 catch (Exception ex)
                 {
@@ -62,7 +62,7 @@ namespace MilitaryDistrict_IS.Frames
 
         private void EditThisKindOfMilitaryWeapon_Click(object sender, RoutedEventArgs e)
         {
-            FrameManager.MainFrame.Navigate(new Frames.frEditKindOfMilitaryWeapon((sender as Button).DataContext as _database.KindOfMilitaryWeapon));
+            FrameManager.MainFrame.Navigate(new Frames.frEditKindOfMilitaryWeapon((sender as Button).DataContext as _database.CategoryOfMilitaryWeapon));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -70,7 +70,7 @@ namespace MilitaryDistrict_IS.Frames
             if (Visibility == Visibility.Visible)
             {
                 Military_District_Information_SystemEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon.ToList();
+                dgKindOfMilitaryWeapon.ItemsSource = Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon_.ToList();
             }
         }
     }

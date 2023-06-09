@@ -12,10 +12,10 @@ namespace MilitaryDistrict_IS._database
     using System;
     using System.Collections.Generic;
     
-    public partial class KindOfMilitaryWeapon
+    public partial class KindOfMilitaryWeapon_
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KindOfMilitaryWeapon()
+        public KindOfMilitaryWeapon_()
         {
             this.MilitaryWeapon = new HashSet<MilitaryWeapon>();
         }

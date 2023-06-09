@@ -161,7 +161,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CategoryOfMilitaryWeaponId" Type="int" />
+    <Property Name="KindOfMilitaryWeaponId" Type="int" />
     <Property Name="Name" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="MilitaryWeaponsInMilitaryBase">
@@ -517,18 +517,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MilitaryWeapon_CategoryOfMilitaryWeapon">
-    <End Role="CategoryOfMilitaryWeapon" Type="Self.CategoryOfMilitaryWeapon" Multiplicity="0..1" />
-    <End Role="MilitaryWeapon" Type="Self.MilitaryWeapon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CategoryOfMilitaryWeapon">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="MilitaryWeapon">
-        <PropertyRef Name="CategoryOfMilitaryWeaponId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_MilitaryWeapon_KindOfMilitaryWeapon&#xA;">
     <End Role="KindOfMilitaryWeapon&#xA;" Type="Self.KindOfMilitaryWeapon&#xA;" Multiplicity="0..1" />
     <End Role="MilitaryWeapon" Type="Self.MilitaryWeapon" Multiplicity="*" />
@@ -537,7 +525,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="MilitaryWeapon">
-        <PropertyRef Name="CategoryOfMilitaryWeaponId" />
+        <PropertyRef Name="KindOfMilitaryWeaponId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -824,10 +812,6 @@
     <AssociationSet Name="FK_MilitaryEquipmentsInMilitaryBase_MilitaryEquipment" Association="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryEquipment">
       <End Role="MilitaryEquipment" EntitySet="MilitaryEquipment" />
       <End Role="MilitaryEquipmentsInMilitaryBase" EntitySet="MilitaryEquipmentsInMilitaryBase" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MilitaryWeapon_CategoryOfMilitaryWeapon" Association="Self.FK_MilitaryWeapon_CategoryOfMilitaryWeapon">
-      <End Role="CategoryOfMilitaryWeapon" EntitySet="CategoryOfMilitaryWeapon" />
-      <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
     </AssociationSet>
     <AssociationSet Name="FK_MilitaryWeapon_KindOfMilitaryWeapon&#xA;" Association="Self.FK_MilitaryWeapon_KindOfMilitaryWeapon&#xA;">
       <End Role="KindOfMilitaryWeapon&#xA;" EntitySet="KindOfMilitaryWeapon&#xA;" />

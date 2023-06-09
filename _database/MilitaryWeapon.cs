@@ -21,11 +21,10 @@ namespace MilitaryDistrict_IS._database
         }
     
         public int Id { get; set; }
-        public Nullable<int> CategoryOfMilitaryWeaponId { get; set; }
+        public Nullable<int> KindOfMilitaryWeaponId { get; set; }
         public string Name { get; set; }
     
-        public virtual CategoryOfMilitaryWeapon CategoryOfMilitaryWeapon { get; set; }
-        public virtual KindOfMilitaryWeapon KindOfMilitaryWeapon_ { get; set; }
+        public virtual KindOfMilitaryWeapon_ KindOfMilitaryWeapon_ { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MilitaryWeaponsInMilitaryBase> MilitaryWeaponsInMilitaryBase { get; set; }
     }

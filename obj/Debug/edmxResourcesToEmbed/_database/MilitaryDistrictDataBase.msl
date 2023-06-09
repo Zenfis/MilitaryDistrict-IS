@@ -38,14 +38,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CategoryOfMilitaryWeapon">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon">
-        <MappingFragment StoreEntitySet="CategoryOfMilitaryWeapon">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Commander">
       <EntityTypeMapping TypeName="Military_District_Information_SystemModel.Commander">
         <MappingFragment StoreEntitySet="Commander">
@@ -128,15 +120,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KindOfMilitaryWeapon">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon">
-        <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="MilitaryBase">
       <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryBase">
         <MappingFragment StoreEntitySet="MilitaryBase">
@@ -172,15 +155,6 @@
           <ScalarProperty Name="MilitaryEquipmentsId" ColumnName="MilitaryEquipmentsId" />
           <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MilitaryWeapon">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryWeapon">
-        <MappingFragment StoreEntitySet="MilitaryWeapon">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -294,5 +268,31 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Military_District_Information_SystemModel.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Military_District_Information_SystemModel.sp_upgraddiagrams" />
+    <EntitySetMapping Name="CategoryOfMilitaryWeapon">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon">
+        <MappingFragment StoreEntitySet="CategoryOfMilitaryWeapon">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KindOfMilitaryWeapon_">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon_">
+        <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MilitaryWeapon">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryWeapon">
+        <MappingFragment StoreEntitySet="MilitaryWeapon">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="KindOfMilitaryWeaponId" ColumnName="KindOfMilitaryWeaponId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
