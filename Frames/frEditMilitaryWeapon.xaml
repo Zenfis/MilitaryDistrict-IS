@@ -1,0 +1,56 @@
+﻿<Page x:Class="MilitaryDistrict_IS.Frames.frEditMilitaryWeapon"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MilitaryDistrict_IS.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="frEditMilitaryWeapon">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="95" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код категории вооружения" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="18" Height="18" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="163,0,0,0" Width="281"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding CategoryOfMilitaryWeaponId}" Grid.Row="4" MinHeight="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,2,0,2" HorizontalAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Название вооружения" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="18" Height="18" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="5" Margin="163,0,0,0" Width="281"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding Name}" Grid.Row="6" MinHeight="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,0,0,1" HorizontalAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button Content="Сохранить" Grid.Row="7" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="SaveMilitaryWeapon" Margin="245,27,0,5" Width="116" Grid.Column="1" Grid.RowSpan="2" Click="SaveMilitaryWeapon_Click" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>

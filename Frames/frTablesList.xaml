@@ -177,7 +177,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button FontSize="9" Grid.Column="4" Width="130" MinWidth="130" Height="46" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="5,4,0,0" Click="Button_Click_19">
+        <Button Grid.Column="4" Width="130" MinWidth="130" Height="46" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Margin="5,4,0,0" Click="Button_Click_19">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -185,6 +185,36 @@
             </Button.Resources>
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontSize="14" TextAlignment="Center">Вооружение<LineBreak/>военной части</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="1" Width="130" MinWidth="130" Height="46" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="Button_Click_20">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="14" TextAlignment="Center">Вооружение</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2" Width="130" MinWidth="130" Height="46" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="Button_Click_21">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="14" TextAlignment="Center">Категория<LineBreak/>вооружения</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2" Width="130" MinWidth="130" Height="46" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="Button_Click_22">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="14" TextAlignment="Center">Вид<LineBreak/>вооружения</TextBlock>
             </StackPanel>
         </Button>
     </Grid>
