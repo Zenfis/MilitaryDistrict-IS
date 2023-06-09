@@ -117,3 +117,7 @@ C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frCategoryO
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditCategoryOfMilitaryWeapon.g.cs
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frCategoryOfMilitaryWeapon.baml
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditCategoryOfMilitaryWeapon.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditMilitaryEquipmentsInMilitaryBase.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryEquipmentsInMilitaryBase.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditMilitaryEquipmentsInMilitaryBase.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frMilitaryEquipmentsInMilitaryBase.baml
