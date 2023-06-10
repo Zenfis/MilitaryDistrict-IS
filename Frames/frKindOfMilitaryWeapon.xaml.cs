@@ -62,7 +62,7 @@ namespace MilitaryDistrict_IS.Frames
 
         private void EditThisKindOfMilitaryWeapon_Click(object sender, RoutedEventArgs e)
         {
-            FrameManager.MainFrame.Navigate(new Frames.frEditKindOfMilitaryWeapon((sender as Button).DataContext as _database.CategoryOfMilitaryWeapon));
+            FrameManager.MainFrame.Navigate(new Frames.frEditKindOfMilitaryWeapon((sender as Button).DataContext as _database.KindOfMilitaryWeapon_));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

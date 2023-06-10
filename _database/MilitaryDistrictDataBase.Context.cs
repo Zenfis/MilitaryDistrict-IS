@@ -33,7 +33,7 @@ namespace MilitaryDistrict_IS._database
                 _context = new Military_District_Information_SystemEntities();
             return _context;
         }
-    public virtual DbSet<Army> Army { get; set; }
+        public virtual DbSet<Army> Army { get; set; }
         public virtual DbSet<Brigade> Brigade { get; set; }
         public virtual DbSet<CategoriesOfRank> CategoriesOfRank { get; set; }
         public virtual DbSet<CategoryOfMilitaryEquipment> CategoryOfMilitaryEquipment { get; set; }

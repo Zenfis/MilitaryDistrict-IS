@@ -20,8 +20,8 @@ namespace MilitaryDistrict_IS.Frames
     /// </summary>
     public partial class frEditKindOfMilitaryWeapon : Page
     {
-        private _database.CategoryOfMilitaryWeapon _currentKindOfMilitaryWeapon = new _database.CategoryOfMilitaryWeapon();
-        public frEditKindOfMilitaryWeapon(_database.CategoryOfMilitaryWeapon selectKindOfMilitaryWeapon)
+        private _database.KindOfMilitaryWeapon_ _currentKindOfMilitaryWeapon = new _database.KindOfMilitaryWeapon_();
+        public frEditKindOfMilitaryWeapon(_database.KindOfMilitaryWeapon_ selectKindOfMilitaryWeapon)
         {
             InitializeComponent();
             if (selectKindOfMilitaryWeapon != null)
@@ -41,7 +41,7 @@ namespace MilitaryDistrict_IS.Frames
             }
 
             if (_currentKindOfMilitaryWeapon.Id == 0)
-                _database.Military_District_Information_SystemEntities.GetContext().CategoryOfMilitaryWeapon.Add(_currentKindOfMilitaryWeapon);
+                _database.Military_District_Information_SystemEntities.GetContext().KindOfMilitaryWeapon_.Add(_currentKindOfMilitaryWeapon);
             try
             {
                 _database.Military_District_Information_SystemEntities.GetContext().SaveChanges();
