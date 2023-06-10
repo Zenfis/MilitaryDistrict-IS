@@ -74,6 +74,9 @@
     <Compile Include="Frames\frCategoriesOfRank.xaml.cs">
       <DependentUpon>frCategoriesOfRank.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frCategoryOfMilitaryEquipment.xaml.cs">
+      <DependentUpon>frCategoryOfMilitaryEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frCategoryOfMilitaryWeapon.xaml.cs">
       <DependentUpon>frCategoryOfMilitaryWeapon.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,9 @@
     </Compile>
     <Compile Include="Frames\frEditCategoriesOfRank.xaml.cs">
       <DependentUpon>frEditCategoriesOfRank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frEditCategoryOfMilitaryEquipment.xaml.cs">
+      <DependentUpon>frEditCategoryOfMilitaryEquipment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frEditCategoryOfMilitaryWeapon.xaml.cs">
       <DependentUpon>frEditCategoryOfMilitaryWeapon.xaml</DependentUpon>
@@ -345,6 +351,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frCategoryOfMilitaryEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frCategoryOfMilitaryWeapon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -386,6 +396,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditCategoriesOfRank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frEditCategoryOfMilitaryEquipment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
