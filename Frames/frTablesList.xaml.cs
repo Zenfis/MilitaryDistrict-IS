@@ -150,5 +150,10 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frMilitaryEquipment());
         }
+
+        private void Button_Click_25(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new frKindOfMilitaryEquipment());
+        }
     }
 }

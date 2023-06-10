@@ -26,13 +26,7 @@ namespace MilitaryDistrict_IS._database
         {
             throw new UnintentionalCodeFirstException();
         }
-        private static Military_District_Information_SystemEntities _context;
-        public static Military_District_Information_SystemEntities GetContext()
-        {
-            if (_context == null)
-                _context = new Military_District_Information_SystemEntities();
-            return _context;
-        }
+    
         public virtual DbSet<Army> Army { get; set; }
         public virtual DbSet<Brigade> Brigade { get; set; }
         public virtual DbSet<CategoriesOfRank> CategoriesOfRank { get; set; }

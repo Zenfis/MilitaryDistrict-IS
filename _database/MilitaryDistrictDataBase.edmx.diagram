@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Corps" Width="1.5" PointX="14.25" PointY="14.875" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Departament" Width="1.5" PointX="18" PointY="7.625" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Division" Width="1.5" PointX="16.5" PointY="14.875" IsExpanded="true" FillColor="255, 128, 0" />
-        <EntityTypeShape EntityType="Military_District_Information_SystemModel.KindOfMilitaryEquipment" Width="2.375" PointX="10.625" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Military_District_Information_SystemModel.KindOfMilitaryEquipment" Width="2.375" PointX="10.625" PointY="2" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.MilitaryBase" Width="2" PointX="10.25" PointY="7.375" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.MilitaryDistrict" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.MilitaryEquipment" Width="2.25" PointX="13.75" PointY="2" IsExpanded="true" FillColor="255, 128, 0" />
@@ -62,9 +62,9 @@
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_Soldier_Rank" ManuallyRouted="false" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_SpecialtyOfSoldier_Soldier" ManuallyRouted="false" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_SpecialtyOfSoldier_Specialty" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon" Width="1.5" PointX="0.75" PointY="12.125" />
-        <EntityTypeShape EntityType="Military_District_Information_SystemModel.KindOfMilitaryWeapon_" Width="2" PointX="3" PointY="11.875" />
-        <EntityTypeShape EntityType="Military_District_Information_SystemModel.MilitaryWeapon" Width="1.5" PointX="5.25" PointY="11.875" />
+        <EntityTypeShape EntityType="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon" Width="1.5" PointX="0.75" PointY="12.125" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="Military_District_Information_SystemModel.KindOfMilitaryWeapon_" Width="2" PointX="3" PointY="11.875" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="Military_District_Information_SystemModel.MilitaryWeapon" Width="1.5" PointX="5.25" PointY="11.875" FillColor="255, 128, 0" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_MilitaryWeapon_KindOfMilitaryWeapon_" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" />

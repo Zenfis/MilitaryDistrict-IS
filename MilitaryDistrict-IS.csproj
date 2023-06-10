@@ -131,6 +131,9 @@
     <Compile Include="Frames\frEditDivision.xaml.cs">
       <DependentUpon>frEditDivision.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\frEditKindOfMilitaryEquipment.xaml.cs">
+      <DependentUpon>frEditKindOfMilitaryEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\frEditKindOfMilitaryWeapon.xaml.cs">
       <DependentUpon>frEditKindOfMilitaryWeapon.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,9 @@
     </Compile>
     <Compile Include="Frames\frEditSpecialtyOfSoldier.xaml.cs">
       <DependentUpon>frEditSpecialtyOfSoldier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\frKindOfMilitaryEquipment.xaml.cs">
+      <DependentUpon>frKindOfMilitaryEquipment.xaml</DependentUpon>
     </Compile>
     <Compile Include="Frames\frKindOfMilitaryWeapon.xaml.cs">
       <DependentUpon>frKindOfMilitaryWeapon.xaml</DependentUpon>
@@ -415,6 +421,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Frames\frEditKindOfMilitaryEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Frames\frEditKindOfMilitaryWeapon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -468,6 +478,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frEditSpecialtyOfSoldier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\frKindOfMilitaryEquipment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
