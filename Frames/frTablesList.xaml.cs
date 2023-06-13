@@ -1,4 +1,5 @@
 ﻿using MilitaryDistrict_IS._database;
+using MilitaryDistrict_IS.Frames.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -160,6 +161,10 @@ namespace MilitaryDistrict_IS.Frames
         {
             FrameManager.MainFrame.Navigate(new frCategoryOfMilitaryEquipment());
         }
-        
+
+        private void Button_Click_27(object sender, RoutedEventArgs e)
+        {
+            FrameManager.MainFrame.Navigate(new _1_query());
+        }
     }
 }

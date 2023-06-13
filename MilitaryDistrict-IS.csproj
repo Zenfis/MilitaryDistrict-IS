@@ -234,6 +234,9 @@
     <Compile Include="Frames\frTablesList.xaml.cs">
       <DependentUpon>frTablesList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\Queries\1-query.xaml.cs">
+      <DependentUpon>1-query.xaml</DependentUpon>
+    </Compile>
     <Compile Include="_database\Army.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
@@ -560,6 +563,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\frTablesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Queries\1-query.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

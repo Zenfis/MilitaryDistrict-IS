@@ -261,5 +261,15 @@
                 <TextBlock FontSize="12" TextAlignment="Center"><Run Text="Категория"/><LineBreak/><Run Text="техники"/></TextBlock>
             </StackPanel>
         </Button>
+        <Button Grid.Column="4" Width="130" MinWidth="130" Height="38" MinHeight="45" FontFamily="Open Sans Light" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Center" Margin="5,0,0,0" Click="Button_Click_27">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="12" TextAlignment="Center"><Run Text="Перенести"/><LineBreak/><Run Text="в запрос"/></TextBlock>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

@@ -133,3 +133,5 @@ C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frCategoryO
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditCategoryOfMilitaryEquipment.g.cs
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frCategoryOfMilitaryEquipment.baml
 C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\frEditCategoryOfMilitaryEquipment.baml
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\Queries\1-query.g.cs
+C:\Users\zhirn\Documents\GitHub\MilitaryDistrict-IS\obj\Debug\Frames\Queries\1-query.baml
