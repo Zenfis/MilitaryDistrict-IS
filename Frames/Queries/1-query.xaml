@@ -23,10 +23,11 @@
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
         <DataGrid Name="queryGrid" Margin="0,0,0,10" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="queryGrid_SelectionChanged" Grid.Column="1"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="^Выберите доступный код" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="^Выберите доступный идентификатор" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <ComboBox FontSize="10" Name="availableQueries" Grid.Column="1" Grid.ColumnSpan="3" Margin="10,6,10,7" SelectedIndex="-1" SelectionChanged="availableQueries_SelectionChanged">
             <ComboBoxItem Content="1. Получить данные о наличии вооружения в целом и с учетом указанной категории военной части"/>
             <ComboBoxItem Content="8. Получить цепочку подчиненности снизу доверху для указанного военнослужащего"/>
+            <ComboBoxItem Content="11. Получить перечень военных частей, в которых число единиц указанного вида боевой техники больше 5 (нет указанной боевой техники)"/>
         </ComboBox>
         <ComboBox x:Name="availableItems" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectionChanged="availabeItems_SelectionChanged"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" Text="^Выберите запрос" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
