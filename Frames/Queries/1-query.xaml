@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:MilitaryDistrict_IS.Frames.Queries"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="_1_query" IsVisibleChanged="Page_IsVisibleChanged">
+      Title="_1_query" IsVisibleChanged="Page_IsVisibleChanged" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,9 +22,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
-        <TextBlock FontSize="15" Text="1.	Получить данные о наличии вооружения в целом и с учетом указанной категории военной части" Grid.Column="1" Margin="10,5,10,50" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
         <DataGrid Name="queryGrid" Margin="0,0,0,10" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="queryGrid_SelectionChanged" Grid.Column="1"/>
-        <TextBox Name="querySearch" FontSize="24" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="707" Grid.ColumnSpan="3" Height="35" Grid.Row="1" Margin="10,5,0,0" TextChanged="querySearch_TextChanged"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="30,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="^Введите код военной части" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="^Выберите доступный код" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ComboBox FontSize="10" Name="availableQueries" Grid.Column="1" Grid.ColumnSpan="3" Margin="10,6,10,7" SelectedIndex="-1" SelectionChanged="availableQueries_SelectionChanged">
+            <ComboBoxItem Content="1. Получить данные о наличии вооружения в целом и с учетом указанной категории военной части"/>
+            <ComboBoxItem Content="8. Получить цепочку подчиненности снизу доверху для указанного военнослужащего"/>
+        </ComboBox>
+        <ComboBox x:Name="availableItems" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectionChanged="availabeItems_SelectionChanged"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" Text="^Выберите запрос" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
@@ -22,6 +23,10 @@ namespace MilitaryDistrict_IS.Frames.Queries
     /// </summary>
     public partial class _1_query : Page
     {
+        private readonly string connectionString = "Data Source=DESKTOP-GT7VQGQ\\SQLEXPRESS;Initial Catalog=Military_District_Information_System;Integrated Security=True";
+        private string storedProcedureName = "";
+        private string value = "";
+        private string table = "";
         public _1_query()
         {
             InitializeComponent();
@@ -37,44 +42,86 @@ namespace MilitaryDistrict_IS.Frames.Queries
 
         }
 
-        private void querySearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            string connectionString = "Data Source=DESKTOP-GT7VQGQ\\SQLEXPRESS;Initial Catalog=Military_District_Information_System;Integrated Security=True";
-            string storedProcedureName = "GetMilitaryWeaponsInMilitaryBase";
-            if (Int32.TryParse(querySearch.Text, out int input))
+
+        }
+
+        private void availabeItems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {           
+            try
             {
-                try
+                int input = 1;
+                if (availableItems.SelectedItem != null)
                 {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        conn.Open();
-
-                        SqlCommand cmd = new SqlCommand(storedProcedureName, conn);
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                        cmd.Parameters.AddWithValue("@MilitaryBaseId", input);
-
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        System.Data.DataTable dataTable = new System.Data.DataTable();
-                        adapter.Fill(dataTable);
-                        if (dataTable.Rows.Count > 0)
-                        {
-                            queryGrid.ItemsSource = dataTable.DefaultView;
-                        }
-                        else
-                        {                           
-                            queryGrid.ItemsSource = null;
-                            MessageBox.Show("Нет данных для отображения по идентификатору: " + querySearch.Text);
-                            querySearch.Text = "";
-                        }
-
-                    }
+                    input = (int)availableItems.SelectedItem;
                 }
-                catch (Exception ex)
+                else
+                    input = 1;
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(storedProcedureName, conn);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue(value, input);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+                    adapter.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        queryGrid.ItemsSource = dataTable.DefaultView;
+                    }
+                    else
+                    {
+                        queryGrid.ItemsSource = null;
+                        MessageBox.Show("Нет данных для отображения по идентификатору"); // + (int)availableItems.SelectedItem
+                        availableItems.SelectedIndex = 1;
+                    }
+
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void FillComboBox()
+        {
+            string str = " Id ";
+            string sqlQuery = "SELECT"+str+"FROM"+table;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int Id = reader.GetInt32(0);
+                    if (availableItems != null)
+                    {
+                        availableItems.Items.Add(Id);
+                    }
+                }
+
+                reader.Close();
+            }
+        }
+
+        private void availableQueries_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (availableQueries.SelectedIndex == 0) { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }
+            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }
+            availableItems.Items.Clear();
+            FillComboBox();
+            availableItems.SelectedIndex = 0;
         }
     }
 }
