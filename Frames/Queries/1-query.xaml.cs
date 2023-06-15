@@ -77,7 +77,7 @@ namespace MilitaryDistrict_IS.Frames.Queries
                     else
                     {
                         queryGrid.ItemsSource = null;                       
-                        MessageBox.Show("Нет данных для отображения\nпо идентификатору: " + (int)availableItems.SelectedItem);
+                        MessageBox.Show("Нет данных для отображения\nпо выбранному идентификатору"); //+(int)availableItems.SelectedItem
                     }
 
                 }
@@ -117,8 +117,9 @@ namespace MilitaryDistrict_IS.Frames.Queries
         private void availableQueries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (availableQueries.SelectedIndex == 0) { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }
-            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }
-            else if (availableQueries.SelectedIndex == 2) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }
+            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetMilitaryBasesWithWeapon"; value = "@WeaponId"; table = " MilitaryWeapon"; }           
+            else if (availableQueries.SelectedIndex == 2) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }
+            else if (availableQueries.SelectedIndex == 3) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }
             availableItems.Items.Clear();
             FillComboBox();
             availableItems.SelectedIndex = 0;

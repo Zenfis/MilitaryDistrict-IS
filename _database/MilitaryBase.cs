@@ -17,9 +17,13 @@ namespace MilitaryDistrict_IS._database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MilitaryBase()
         {
+            this.Army = new HashSet<Army>();
+            this.Brigade = new HashSet<Brigade>();
             this.Company = new HashSet<Company>();
             this.ConstructionsInMilitaryBase = new HashSet<ConstructionsInMilitaryBase>();
+            this.Corps = new HashSet<Corps>();
             this.Departament = new HashSet<Departament>();
+            this.Division = new HashSet<Division>();
             this.MilitaryEquipmentsInMilitaryBase = new HashSet<MilitaryEquipmentsInMilitaryBase>();
             this.MilitaryWeaponsInMilitaryBase = new HashSet<MilitaryWeaponsInMilitaryBase>();
             this.Platoon = new HashSet<Platoon>();
@@ -30,13 +34,21 @@ namespace MilitaryDistrict_IS._database
         public Nullable<int> CommanderId { get; set; }
         public Nullable<int> PlacesOfDeploymentId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Army> Army { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Brigade> Brigade { get; set; }
         public virtual Commander Commander { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Company> Company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ConstructionsInMilitaryBase> ConstructionsInMilitaryBase { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Corps> Corps { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Departament> Departament { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Division> Division { get; set; }
         public virtual PlacesOfDeployment PlacesOfDeployment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MilitaryEquipmentsInMilitaryBase> MilitaryEquipmentsInMilitaryBase { get; set; }

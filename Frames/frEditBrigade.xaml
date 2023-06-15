@@ -24,6 +24,8 @@
             <RowDefinition Height="44"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="44"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="44"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Название бригады" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="18" Height="18" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="1" Margin="163,6,0,0" Width="150"/>
@@ -62,7 +64,16 @@
             </TextBox.Resources>
         </TextBox>
 
-        <Button Content="Сохранить" Grid.Row="4" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="SaveBrigade" Margin="533,38,0,38" Width="116" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Click="SaveBrigade_Click" >
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код военной базы" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="9" Margin="163,10,0,0" Width="31"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding MilitaryBaseId}" Grid.Row="10" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,2,0,2" HorizontalAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button Content="Сохранить" Grid.Row="6" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="SaveBrigade" Margin="526,0,0,2" Width="116" Grid.Column="1" Grid.ColumnSpan="2" Click="SaveBrigade_Click" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

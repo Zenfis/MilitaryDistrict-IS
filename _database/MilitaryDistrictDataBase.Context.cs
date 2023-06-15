@@ -18,19 +18,16 @@ namespace MilitaryDistrict_IS._database
     public partial class Military_District_Information_SystemEntities : DbContext
     {
         private static Military_District_Information_SystemEntities _context;
-
         public Military_District_Information_SystemEntities()
             : base("name=Military_District_Information_SystemEntities")
         {
         }
-
         public static Military_District_Information_SystemEntities GetContext()
         {
             if (_context == null)
                 _context = new Military_District_Information_SystemEntities();
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -40,6 +37,7 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Brigade> Brigade { get; set; }
         public virtual DbSet<CategoriesOfRank> CategoriesOfRank { get; set; }
         public virtual DbSet<CategoryOfMilitaryEquipment> CategoryOfMilitaryEquipment { get; set; }
+        public virtual DbSet<CategoryOfMilitaryWeapon> CategoryOfMilitaryWeapon { get; set; }
         public virtual DbSet<Commander> Commander { get; set; }
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<Construction> Construction { get; set; }
@@ -48,10 +46,12 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Departament> Departament { get; set; }
         public virtual DbSet<Division> Division { get; set; }
         public virtual DbSet<KindOfMilitaryEquipment> KindOfMilitaryEquipment { get; set; }
+        public virtual DbSet<KindOfMilitaryWeapon_> KindOfMilitaryWeapon_ { get; set; }
         public virtual DbSet<MilitaryBase> MilitaryBase { get; set; }
         public virtual DbSet<MilitaryDistrict> MilitaryDistrict { get; set; }
         public virtual DbSet<MilitaryEquipment> MilitaryEquipment { get; set; }
         public virtual DbSet<MilitaryEquipmentsInMilitaryBase> MilitaryEquipmentsInMilitaryBase { get; set; }
+        public virtual DbSet<MilitaryWeapon> MilitaryWeapon { get; set; }
         public virtual DbSet<MilitaryWeaponsInMilitaryBase> MilitaryWeaponsInMilitaryBase { get; set; }
         public virtual DbSet<PartsOfMilitaryDistrict> PartsOfMilitaryDistrict { get; set; }
         public virtual DbSet<PlacesOfDeployment> PlacesOfDeployment { get; set; }
@@ -61,9 +61,42 @@ namespace MilitaryDistrict_IS._database
         public virtual DbSet<Specialty> Specialty { get; set; }
         public virtual DbSet<SpecialtyOfSoldier> SpecialtyOfSoldier { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<CategoryOfMilitaryWeapon> CategoryOfMilitaryWeapon { get; set; }
-        public virtual DbSet<KindOfMilitaryWeapon_> KindOfMilitaryWeapon_ { get; set; }
-        public virtual DbSet<MilitaryWeapon> MilitaryWeapon { get; set; }
+    
+        public virtual ObjectResult<GetMilitaryBasesWithEquipment_Result> GetMilitaryBasesWithEquipment(Nullable<int> equipmentId)
+        {
+            var equipmentIdParameter = equipmentId.HasValue ?
+                new ObjectParameter("EquipmentId", equipmentId) :
+                new ObjectParameter("EquipmentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMilitaryBasesWithEquipment_Result>("GetMilitaryBasesWithEquipment", equipmentIdParameter);
+        }
+    
+        public virtual ObjectResult<GetMilitaryBasesWithWeapon_Result> GetMilitaryBasesWithWeapon(Nullable<int> weaponId)
+        {
+            var weaponIdParameter = weaponId.HasValue ?
+                new ObjectParameter("WeaponId", weaponId) :
+                new ObjectParameter("WeaponId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMilitaryBasesWithWeapon_Result>("GetMilitaryBasesWithWeapon", weaponIdParameter);
+        }
+    
+        public virtual ObjectResult<GetMilitaryWeaponsInMilitaryBase_Result> GetMilitaryWeaponsInMilitaryBase(Nullable<int> militaryBaseId)
+        {
+            var militaryBaseIdParameter = militaryBaseId.HasValue ?
+                new ObjectParameter("MilitaryBaseId", militaryBaseId) :
+                new ObjectParameter("MilitaryBaseId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetMilitaryWeaponsInMilitaryBase_Result>("GetMilitaryWeaponsInMilitaryBase", militaryBaseIdParameter);
+        }
+    
+        public virtual ObjectResult<GetSubordinationChain_Result> GetSubordinationChain(Nullable<int> soldierId)
+        {
+            var soldierIdParameter = soldierId.HasValue ?
+                new ObjectParameter("soldierId", soldierId) :
+                new ObjectParameter("soldierId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSubordinationChain_Result>("GetSubordinationChain", soldierIdParameter);
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

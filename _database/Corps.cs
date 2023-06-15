@@ -25,8 +25,10 @@ namespace MilitaryDistrict_IS._database
         public Nullable<int> PartsOfMilDistrId { get; set; }
         public Nullable<int> CommanderId { get; set; }
         public Nullable<int> ArmyId { get; set; }
+        public Nullable<int> MilitaryBaseId { get; set; }
     
         public virtual Army Army { get; set; }
+        public virtual MilitaryBase MilitaryBase { get; set; }
         public virtual PartsOfMilitaryDistrict PartsOfMilitaryDistrict { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Division> Division { get; set; }

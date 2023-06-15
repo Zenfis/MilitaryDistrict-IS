@@ -8,6 +8,7 @@
     <Property Name="Name" Type="varchar(max)" />
     <Property Name="PartsOfMilDistrId" Type="int" />
     <Property Name="CommanderId" Type="int" />
+    <Property Name="MilitaryBaseId" Type="int" />
   </EntityType>
   <EntityType Name="Brigade">
     <Key>
@@ -18,6 +19,7 @@
     <Property Name="PartsOfMilDistrId" Type="int" />
     <Property Name="CommanderId" Type="int" />
     <Property Name="DivisionId" Type="int" />
+    <Property Name="MilitaryBaseId" Type="int" />
   </EntityType>
   <EntityType Name="CategoriesOfRank">
     <Key>
@@ -85,6 +87,7 @@
     <Property Name="PartsOfMilDistrId" Type="int" />
     <Property Name="CommanderId" Type="int" />
     <Property Name="ArmyId" Type="int" />
+    <Property Name="MilitaryBaseId" Type="int" />
   </EntityType>
   <EntityType Name="Departament">
     <Key>
@@ -105,6 +108,7 @@
     <Property Name="PartsOfMilDistrId" Type="int" />
     <Property Name="CommanderId" Type="int" />
     <Property Name="CorpsId" Type="int" />
+    <Property Name="MilitaryBaseId" Type="int" />
   </EntityType>
   <EntityType Name="KindOfMilitaryEquipment">
     <Key>
@@ -241,6 +245,18 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_Army_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Army" Type="Self.Army" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Army">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Army_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Army" Type="Self.Army" Multiplicity="*" />
@@ -262,6 +278,18 @@
       </Principal>
       <Dependent Role="Brigade">
         <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Brigade_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Brigade" Type="Self.Brigade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Brigade">
+        <PropertyRef Name="MilitaryBaseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -349,6 +377,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Corps_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Corps" Type="Self.Corps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Corps">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Corps_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Corps" Type="Self.Corps" Multiplicity="*" />
@@ -406,6 +446,18 @@
       </Principal>
       <Dependent Role="Division">
         <PropertyRef Name="CorpsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Division_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Division" Type="Self.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Division">
+        <PropertyRef Name="MilitaryBaseId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -662,6 +714,18 @@
     </ReferentialConstraint>
   </Association>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="GetMilitaryBasesWithEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EquipmentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMilitaryBasesWithWeapon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="WeaponId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMilitaryWeaponsInMilitaryBase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MilitaryBaseId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSubordinationChain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="soldierId" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -721,12 +785,20 @@
     <EntitySet Name="Specialty" EntityType="Self.Specialty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SpecialtyOfSoldier" EntityType="Self.SpecialtyOfSoldier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Army_MilitaryBase" Association="Self.FK_Army_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+      <End Role="Army" EntitySet="Army" />
+    </AssociationSet>
     <AssociationSet Name="FK_Army_PartsOfMilitaryDistrict" Association="Self.FK_Army_PartsOfMilitaryDistrict">
       <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="Army" EntitySet="Army" />
     </AssociationSet>
     <AssociationSet Name="FK_Brigade_Division" Association="Self.FK_Brigade_Division">
       <End Role="Division" EntitySet="Division" />
+      <End Role="Brigade" EntitySet="Brigade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Brigade_MilitaryBase" Association="Self.FK_Brigade_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
       <End Role="Brigade" EntitySet="Brigade" />
     </AssociationSet>
     <AssociationSet Name="FK_Brigade_PartsOfMilitaryDistrict" Association="Self.FK_Brigade_PartsOfMilitaryDistrict">
@@ -757,6 +829,10 @@
       <End Role="Army" EntitySet="Army" />
       <End Role="Corps" EntitySet="Corps" />
     </AssociationSet>
+    <AssociationSet Name="FK_Corps_MilitaryBase" Association="Self.FK_Corps_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+      <End Role="Corps" EntitySet="Corps" />
+    </AssociationSet>
     <AssociationSet Name="FK_Corps_PartsOfMilitaryDistrict" Association="Self.FK_Corps_PartsOfMilitaryDistrict">
       <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="Corps" EntitySet="Corps" />
@@ -775,6 +851,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Division_Corps" Association="Self.FK_Division_Corps">
       <End Role="Corps" EntitySet="Corps" />
+      <End Role="Division" EntitySet="Division" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Division_MilitaryBase" Association="Self.FK_Division_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
       <End Role="Division" EntitySet="Division" />
     </AssociationSet>
     <AssociationSet Name="FK_Division_PartsOfMilitaryDistrict" Association="Self.FK_Division_PartsOfMilitaryDistrict">

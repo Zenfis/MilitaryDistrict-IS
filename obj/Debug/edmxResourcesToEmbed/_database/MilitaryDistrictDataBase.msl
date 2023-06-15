@@ -8,6 +8,7 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
           <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />
+          <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,6 +20,7 @@
           <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
           <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />
           <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+          <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -33,6 +35,14 @@
     <EntitySetMapping Name="CategoryOfMilitaryEquipment">
       <EntityTypeMapping TypeName="Military_District_Information_SystemModel.CategoryOfMilitaryEquipment">
         <MappingFragment StoreEntitySet="CategoryOfMilitaryEquipment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryOfMilitaryWeapon">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon">
+        <MappingFragment StoreEntitySet="CategoryOfMilitaryWeapon">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
@@ -86,6 +96,7 @@
           <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
           <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />
           <ScalarProperty Name="ArmyId" ColumnName="ArmyId" />
+          <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -108,6 +119,7 @@
           <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
           <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />
           <ScalarProperty Name="CorpsId" ColumnName="CorpsId" />
+          <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -117,6 +129,15 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CategoryOfMilitaryEquipmentId" ColumnName="CategoryOfMilitaryEquipmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KindOfMilitaryWeapon_">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon_">
+        <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -155,6 +176,15 @@
           <ScalarProperty Name="MilitaryEquipmentsId" ColumnName="MilitaryEquipmentsId" />
           <ScalarProperty Name="MilitaryBaseId" ColumnName="MilitaryBaseId" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MilitaryWeapon">
+      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryWeapon">
+        <MappingFragment StoreEntitySet="MilitaryWeapon">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="KindOfMilitaryWeaponId" ColumnName="KindOfMilitaryWeaponId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -244,6 +274,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetMilitaryBasesWithEquipment" FunctionName="Хранилище Military_District_Information_SystemModel.GetMilitaryBasesWithEquipment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Military_District_Information_SystemModel.GetMilitaryBasesWithEquipment_Result">
+          <ScalarProperty Name="Код_военной_части" ColumnName="Код военной части" />
+          <ScalarProperty Name="Название_военной_части" ColumnName="Название военной части" />
+          <ScalarProperty Name="Код_техники" ColumnName="Код техники" />
+          <ScalarProperty Name="Название_техники" ColumnName="Название техники" />
+          <ScalarProperty Name="Количество_единиц_техники_в_части" ColumnName="Количество единиц техники в части" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMilitaryBasesWithWeapon" FunctionName="Хранилище Military_District_Information_SystemModel.GetMilitaryBasesWithWeapon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Military_District_Information_SystemModel.GetMilitaryBasesWithWeapon_Result">
+          <ScalarProperty Name="Код_военной_части" ColumnName="Код военной части" />
+          <ScalarProperty Name="Название_военной_части" ColumnName="Название военной части" />
+          <ScalarProperty Name="Код_вооружения" ColumnName="Код вооружения" />
+          <ScalarProperty Name="Название_вооружения" ColumnName="Название вооружения" />
+          <ScalarProperty Name="Количество_единиц_вооружения_в_части" ColumnName="Количество единиц вооружения в части" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMilitaryWeaponsInMilitaryBase" FunctionName="Хранилище Military_District_Information_SystemModel.GetMilitaryWeaponsInMilitaryBase">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Military_District_Information_SystemModel.GetMilitaryWeaponsInMilitaryBase_Result">
+          <ScalarProperty Name="Код_военной_части" ColumnName="Код военной части" />
+          <ScalarProperty Name="Название_военной_части" ColumnName="Название военной части" />
+          <ScalarProperty Name="Код_вооружения" ColumnName="Код вооружения" />
+          <ScalarProperty Name="Название_вооружения" ColumnName="Название вооружения" />
+          <ScalarProperty Name="Количество_единиц_вооружения_в_части" ColumnName="Количество единиц вооружения в части" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSubordinationChain" FunctionName="Хранилище Military_District_Information_SystemModel.GetSubordinationChain">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Military_District_Information_SystemModel.GetSubordinationChain_Result">
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Звание" ColumnName="Звание" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Military_District_Information_SystemModel.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Military_District_Information_SystemModel.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Military_District_Information_SystemModel.sp_dropdiagram" />
@@ -268,31 +341,5 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Military_District_Information_SystemModel.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Military_District_Information_SystemModel.sp_upgraddiagrams" />
-    <EntitySetMapping Name="CategoryOfMilitaryWeapon">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon">
-        <MappingFragment StoreEntitySet="CategoryOfMilitaryWeapon">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="KindOfMilitaryWeapon_">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.KindOfMilitaryWeapon_">
-        <MappingFragment StoreEntitySet="KindOfMilitaryWeapon&#xA;">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CategoryOfMilitaryWeaponId" ColumnName="CategoryOfMilitaryWeaponId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MilitaryWeapon">
-      <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryWeapon">
-        <MappingFragment StoreEntitySet="MilitaryWeapon">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="KindOfMilitaryWeaponId" ColumnName="KindOfMilitaryWeaponId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

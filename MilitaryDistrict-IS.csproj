@@ -273,6 +273,18 @@
     <Compile Include="_database\Division.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="_database\GetMilitaryBasesWithEquipment_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\GetMilitaryBasesWithWeapon_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\GetMilitaryWeaponsInMilitaryBase_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\GetSubordinationChain_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="_database\KindOfMilitaryEquipment.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
@@ -313,6 +325,9 @@
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\PartsOfMilitaryDistrict.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\PlacesOfDeployment.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\PlacesOfDeployment.cs">
@@ -613,15 +628,22 @@
     <None Include="_database\MilitaryDistrictDataBase.edmx.diagram">
       <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
     </None>
+    <None Include="_database\MilitaryDistrictDataBase.edmx.diagram">
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <Content Include="_database\MilitaryDistrictDataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MilitaryDistrictDataBase.Context.cs</LastGenOutput>
       <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+      <LastGenOutput>MilitaryDistrictDataBase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="_database\MilitaryDistrictDataBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -629,9 +651,5 @@
       <LastGenOutput>MilitaryDistrictDataBase.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

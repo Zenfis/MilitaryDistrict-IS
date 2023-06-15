@@ -8,6 +8,8 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="PartsOfMilDistrId" Type="Int32" />
     <Property Name="CommanderId" Type="Int32" />
+    <Property Name="MilitaryBaseId" Type="Int32" />
+    <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_Army_MilitaryBase" FromRole="Army" ToRole="MilitaryBase" />
     <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Self.FK_Army_PartsOfMilitaryDistrict" FromRole="Army" ToRole="PartsOfMilitaryDistrict" />
     <NavigationProperty Name="Corps" Relationship="Self.FK_Corps_Army" FromRole="Army" ToRole="Corps" />
   </EntityType>
@@ -20,7 +22,9 @@
     <Property Name="PartsOfMilDistrId" Type="Int32" />
     <Property Name="CommanderId" Type="Int32" />
     <Property Name="DivisionId" Type="Int32" />
+    <Property Name="MilitaryBaseId" Type="Int32" />
     <NavigationProperty Name="Division" Relationship="Self.FK_Brigade_Division" FromRole="Brigade" ToRole="Division" />
+    <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_Brigade_MilitaryBase" FromRole="Brigade" ToRole="MilitaryBase" />
     <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Self.FK_Brigade_PartsOfMilitaryDistrict" FromRole="Brigade" ToRole="PartsOfMilitaryDistrict" />
   </EntityType>
   <EntityType Name="CategoriesOfRank">
@@ -38,6 +42,14 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="KindOfMilitaryEquipment" Relationship="Self.FK_KindOfMilitaryEquipment_CategoryOfMilitaryEquipment" FromRole="CategoryOfMilitaryEquipment" ToRole="KindOfMilitaryEquipment" />
+  </EntityType>
+  <EntityType Name="CategoryOfMilitaryWeapon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KindOfMilitaryWeapon_" Relationship="Self.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" FromRole="CategoryOfMilitaryWeapon" ToRole="KindOfMilitaryWeapon_" />
   </EntityType>
   <EntityType Name="Commander">
     <Key>
@@ -96,7 +108,9 @@
     <Property Name="PartsOfMilDistrId" Type="Int32" />
     <Property Name="CommanderId" Type="Int32" />
     <Property Name="ArmyId" Type="Int32" />
+    <Property Name="MilitaryBaseId" Type="Int32" />
     <NavigationProperty Name="Army" Relationship="Self.FK_Corps_Army" FromRole="Corps" ToRole="Army" />
+    <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_Corps_MilitaryBase" FromRole="Corps" ToRole="MilitaryBase" />
     <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Self.FK_Corps_PartsOfMilitaryDistrict" FromRole="Corps" ToRole="PartsOfMilitaryDistrict" />
     <NavigationProperty Name="Division" Relationship="Self.FK_Division_Corps" FromRole="Corps" ToRole="Division" />
   </EntityType>
@@ -123,8 +137,10 @@
     <Property Name="PartsOfMilDistrId" Type="Int32" />
     <Property Name="CommanderId" Type="Int32" />
     <Property Name="CorpsId" Type="Int32" />
+    <Property Name="MilitaryBaseId" Type="Int32" />
     <NavigationProperty Name="Brigade" Relationship="Self.FK_Brigade_Division" FromRole="Division" ToRole="Brigade" />
     <NavigationProperty Name="Corps" Relationship="Self.FK_Division_Corps" FromRole="Division" ToRole="Corps" />
+    <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_Division_MilitaryBase" FromRole="Division" ToRole="MilitaryBase" />
     <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Self.FK_Division_PartsOfMilitaryDistrict" FromRole="Division" ToRole="PartsOfMilitaryDistrict" />
   </EntityType>
   <EntityType Name="KindOfMilitaryEquipment">
@@ -137,6 +153,16 @@
     <NavigationProperty Name="CategoryOfMilitaryEquipment" Relationship="Self.FK_KindOfMilitaryEquipment_CategoryOfMilitaryEquipment" FromRole="KindOfMilitaryEquipment" ToRole="CategoryOfMilitaryEquipment" />
     <NavigationProperty Name="MilitaryEquipment" Relationship="Self.FK_MilitaryEquipment_KindOfMilitaryEquipment" FromRole="KindOfMilitaryEquipment" ToRole="MilitaryEquipment" />
   </EntityType>
+  <EntityType Name="KindOfMilitaryWeapon_">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryOfMilitaryWeaponId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CategoryOfMilitaryWeapon" Relationship="Self.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" FromRole="KindOfMilitaryWeapon_" ToRole="CategoryOfMilitaryWeapon" />
+    <NavigationProperty Name="MilitaryWeapon" Relationship="Self.FK_MilitaryWeapon_KindOfMilitaryWeapon_" FromRole="KindOfMilitaryWeapon_" ToRole="MilitaryWeapon" />
+  </EntityType>
   <EntityType Name="MilitaryBase">
     <Key>
       <PropertyRef Name="Id" />
@@ -145,10 +171,14 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="CommanderId" Type="Int32" />
     <Property Name="PlacesOfDeploymentId" Type="Int32" />
+    <NavigationProperty Name="Army" Relationship="Self.FK_Army_MilitaryBase" FromRole="MilitaryBase" ToRole="Army" />
+    <NavigationProperty Name="Brigade" Relationship="Self.FK_Brigade_MilitaryBase" FromRole="MilitaryBase" ToRole="Brigade" />
     <NavigationProperty Name="Commander" Relationship="Self.FK_MilitaryBase_Commander" FromRole="MilitaryBase" ToRole="Commander" />
     <NavigationProperty Name="Company" Relationship="Self.FK_Company_MilitaryBase" FromRole="MilitaryBase" ToRole="Company" />
     <NavigationProperty Name="ConstructionsInMilitaryBase" Relationship="Self.FK_ConstructionsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="ConstructionsInMilitaryBase" />
+    <NavigationProperty Name="Corps" Relationship="Self.FK_Corps_MilitaryBase" FromRole="MilitaryBase" ToRole="Corps" />
     <NavigationProperty Name="Departament" Relationship="Self.FK_Departament_MilitaryBase" FromRole="MilitaryBase" ToRole="Departament" />
+    <NavigationProperty Name="Division" Relationship="Self.FK_Division_MilitaryBase" FromRole="MilitaryBase" ToRole="Division" />
     <NavigationProperty Name="PlacesOfDeployment" Relationship="Self.FK_MilitaryBase_PlacesOfDeployment" FromRole="MilitaryBase" ToRole="PlacesOfDeployment" />
     <NavigationProperty Name="MilitaryEquipmentsInMilitaryBase" Relationship="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryEquipmentsInMilitaryBase" />
     <NavigationProperty Name="MilitaryWeaponsInMilitaryBase" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryWeaponsInMilitaryBase" />
@@ -185,6 +215,16 @@
     <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryBase" FromRole="MilitaryEquipmentsInMilitaryBase" ToRole="MilitaryBase" />
     <NavigationProperty Name="MilitaryEquipment" Relationship="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryEquipment" FromRole="MilitaryEquipmentsInMilitaryBase" ToRole="MilitaryEquipment" />
   </EntityType>
+  <EntityType Name="MilitaryWeapon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KindOfMilitaryWeaponId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KindOfMilitaryWeapon_" Relationship="Self.FK_MilitaryWeapon_KindOfMilitaryWeapon_" FromRole="MilitaryWeapon" ToRole="KindOfMilitaryWeapon_" />
+    <NavigationProperty Name="MilitaryWeaponsInMilitaryBase" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" FromRole="MilitaryWeapon" ToRole="MilitaryWeaponsInMilitaryBase" />
+  </EntityType>
   <EntityType Name="MilitaryWeaponsInMilitaryBase">
     <Key>
       <PropertyRef Name="Id" />
@@ -194,7 +234,7 @@
     <Property Name="MilitaryBaseId" Type="Int32" />
     <Property Name="Amount" Type="Int32" />
     <NavigationProperty Name="MilitaryBase" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryBase" FromRole="MilitaryWeaponsInMilitaryBase" ToRole="MilitaryBase" />
-    <NavigationProperty Name="MilitaryWeapon" Relationship="Military_District_Information_SystemModel.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" FromRole="MilitaryWeaponsInMilitaryBase" ToRole="MilitaryWeapon" />
+    <NavigationProperty Name="MilitaryWeapon" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" FromRole="MilitaryWeaponsInMilitaryBase" ToRole="MilitaryWeapon" />
   </EntityType>
   <EntityType Name="PartsOfMilitaryDistrict">
     <Key>
@@ -283,6 +323,18 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <Association Name="FK_Army_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Army" Type="Self.Army" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Army">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Army_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Army" Type="Self.Army" Multiplicity="*" />
@@ -319,6 +371,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Brigade_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Brigade" Type="Self.Brigade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Brigade">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Brigade_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Brigade" Type="Self.Brigade" Multiplicity="*" />
@@ -352,6 +416,18 @@
       </Principal>
       <Dependent Role="KindOfMilitaryEquipment">
         <PropertyRef Name="CategoryOfMilitaryEquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
+    <End Role="CategoryOfMilitaryWeapon" Type="Self.CategoryOfMilitaryWeapon" Multiplicity="0..1" />
+    <End Role="KindOfMilitaryWeapon_" Type="Self.KindOfMilitaryWeapon_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryOfMilitaryWeapon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KindOfMilitaryWeapon_">
+        <PropertyRef Name="CategoryOfMilitaryWeaponId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -475,6 +551,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Corps_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Corps" Type="Self.Corps" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Corps">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Corps_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Corps" Type="Self.Corps" Multiplicity="*" />
@@ -535,6 +623,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Division_MilitaryBase">
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="0..1" />
+    <End Role="Division" Type="Self.Division" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Division">
+        <PropertyRef Name="MilitaryBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Division_PartsOfMilitaryDistrict">
     <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
     <End Role="Division" Type="Self.Division" Multiplicity="*" />
@@ -556,6 +656,18 @@
       </Principal>
       <Dependent Role="MilitaryEquipment">
         <PropertyRef Name="KindOfMilitaryEquipmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_">
+    <End Role="KindOfMilitaryWeapon_" Type="Self.KindOfMilitaryWeapon_" Multiplicity="0..1" />
+    <End Role="MilitaryWeapon" Type="Self.MilitaryWeapon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KindOfMilitaryWeapon_">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MilitaryWeapon">
+        <PropertyRef Name="KindOfMilitaryWeaponId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -631,6 +743,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon">
+    <End Role="MilitaryWeapon" Type="Self.MilitaryWeapon" Multiplicity="0..1" />
+    <End Role="MilitaryWeaponsInMilitaryBase" Type="Self.MilitaryWeaponsInMilitaryBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryWeapon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MilitaryWeaponsInMilitaryBase">
+        <PropertyRef Name="MilitaryWeaponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Soldier_Rank">
     <End Role="Rank" Type="Self.Rank" Multiplicity="0..1" />
     <End Role="Soldier" Type="Self.Soldier" Multiplicity="*" />
@@ -672,6 +796,7 @@
     <EntitySet Name="Brigade" EntityType="Self.Brigade" />
     <EntitySet Name="CategoriesOfRank" EntityType="Self.CategoriesOfRank" />
     <EntitySet Name="CategoryOfMilitaryEquipment" EntityType="Self.CategoryOfMilitaryEquipment" />
+    <EntitySet Name="CategoryOfMilitaryWeapon" EntityType="Self.CategoryOfMilitaryWeapon" />
     <EntitySet Name="Commander" EntityType="Self.Commander" />
     <EntitySet Name="Company" EntityType="Self.Company" />
     <EntitySet Name="Construction" EntityType="Self.Construction" />
@@ -680,10 +805,12 @@
     <EntitySet Name="Departament" EntityType="Self.Departament" />
     <EntitySet Name="Division" EntityType="Self.Division" />
     <EntitySet Name="KindOfMilitaryEquipment" EntityType="Self.KindOfMilitaryEquipment" />
+    <EntitySet Name="KindOfMilitaryWeapon_" EntityType="Self.KindOfMilitaryWeapon_" />
     <EntitySet Name="MilitaryBase" EntityType="Self.MilitaryBase" />
     <EntitySet Name="MilitaryDistrict" EntityType="Self.MilitaryDistrict" />
     <EntitySet Name="MilitaryEquipment" EntityType="Self.MilitaryEquipment" />
     <EntitySet Name="MilitaryEquipmentsInMilitaryBase" EntityType="Self.MilitaryEquipmentsInMilitaryBase" />
+    <EntitySet Name="MilitaryWeapon" EntityType="Self.MilitaryWeapon" />
     <EntitySet Name="MilitaryWeaponsInMilitaryBase" EntityType="Self.MilitaryWeaponsInMilitaryBase" />
     <EntitySet Name="PartsOfMilitaryDistrict" EntityType="Self.PartsOfMilitaryDistrict" />
     <EntitySet Name="PlacesOfDeployment" EntityType="Self.PlacesOfDeployment" />
@@ -693,6 +820,10 @@
     <EntitySet Name="Specialty" EntityType="Self.Specialty" />
     <EntitySet Name="SpecialtyOfSoldier" EntityType="Self.SpecialtyOfSoldier" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Army_MilitaryBase" Association="Self.FK_Army_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+      <End Role="Army" EntitySet="Army" />
+    </AssociationSet>
     <AssociationSet Name="FK_Army_PartsOfMilitaryDistrict" Association="Self.FK_Army_PartsOfMilitaryDistrict">
       <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="Army" EntitySet="Army" />
@@ -703,6 +834,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Brigade_Division" Association="Self.FK_Brigade_Division">
       <End Role="Division" EntitySet="Division" />
+      <End Role="Brigade" EntitySet="Brigade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Brigade_MilitaryBase" Association="Self.FK_Brigade_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
       <End Role="Brigade" EntitySet="Brigade" />
     </AssociationSet>
     <AssociationSet Name="FK_Brigade_PartsOfMilitaryDistrict" Association="Self.FK_Brigade_PartsOfMilitaryDistrict">
@@ -716,6 +851,10 @@
     <AssociationSet Name="FK_KindOfMilitaryEquipment_CategoryOfMilitaryEquipment" Association="Self.FK_KindOfMilitaryEquipment_CategoryOfMilitaryEquipment">
       <End Role="CategoryOfMilitaryEquipment" EntitySet="CategoryOfMilitaryEquipment" />
       <End Role="KindOfMilitaryEquipment" EntitySet="KindOfMilitaryEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" Association="Self.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
+      <End Role="CategoryOfMilitaryWeapon" EntitySet="CategoryOfMilitaryWeapon" />
+      <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
     </AssociationSet>
     <AssociationSet Name="FK_Commander_Rank" Association="Self.FK_Commander_Rank">
       <End Role="Rank" EntitySet="Rank" />
@@ -757,6 +896,10 @@
       <End Role="MilitaryBase" EntitySet="MilitaryBase" />
       <End Role="ConstructionsInMilitaryBase" EntitySet="ConstructionsInMilitaryBase" />
     </AssociationSet>
+    <AssociationSet Name="FK_Corps_MilitaryBase" Association="Self.FK_Corps_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+      <End Role="Corps" EntitySet="Corps" />
+    </AssociationSet>
     <AssociationSet Name="FK_Corps_PartsOfMilitaryDistrict" Association="Self.FK_Corps_PartsOfMilitaryDistrict">
       <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="Corps" EntitySet="Corps" />
@@ -777,6 +920,10 @@
       <End Role="Departament" EntitySet="Departament" />
       <End Role="Soldier" EntitySet="Soldier" />
     </AssociationSet>
+    <AssociationSet Name="FK_Division_MilitaryBase" Association="Self.FK_Division_MilitaryBase">
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+      <End Role="Division" EntitySet="Division" />
+    </AssociationSet>
     <AssociationSet Name="FK_Division_PartsOfMilitaryDistrict" Association="Self.FK_Division_PartsOfMilitaryDistrict">
       <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="Division" EntitySet="Division" />
@@ -784,6 +931,10 @@
     <AssociationSet Name="FK_MilitaryEquipment_KindOfMilitaryEquipment" Association="Self.FK_MilitaryEquipment_KindOfMilitaryEquipment">
       <End Role="KindOfMilitaryEquipment" EntitySet="KindOfMilitaryEquipment" />
       <End Role="MilitaryEquipment" EntitySet="MilitaryEquipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_" Association="Self.FK_MilitaryWeapon_KindOfMilitaryWeapon_">
+      <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
+      <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
     </AssociationSet>
     <AssociationSet Name="FK_MilitaryBase_PlacesOfDeployment" Association="Self.FK_MilitaryBase_PlacesOfDeployment">
       <End Role="PlacesOfDeployment" EntitySet="PlacesOfDeployment" />
@@ -809,6 +960,10 @@
       <End Role="MilitaryEquipment" EntitySet="MilitaryEquipment" />
       <End Role="MilitaryEquipmentsInMilitaryBase" EntitySet="MilitaryEquipmentsInMilitaryBase" />
     </AssociationSet>
+    <AssociationSet Name="FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" Association="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon">
+      <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
+      <End Role="MilitaryWeaponsInMilitaryBase" EntitySet="MilitaryWeaponsInMilitaryBase" />
+    </AssociationSet>
     <AssociationSet Name="FK_Soldier_Rank" Association="Self.FK_Soldier_Rank">
       <End Role="Rank" EntitySet="Rank" />
       <End Role="Soldier" EntitySet="Soldier" />
@@ -821,6 +976,18 @@
       <End Role="Specialty" EntitySet="Specialty" />
       <End Role="SpecialtyOfSoldier" EntitySet="SpecialtyOfSoldier" />
     </AssociationSet>
+    <FunctionImport Name="GetMilitaryBasesWithEquipment" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryBasesWithEquipment_Result)">
+      <Parameter Name="EquipmentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMilitaryBasesWithWeapon" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryBasesWithWeapon_Result)">
+      <Parameter Name="WeaponId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMilitaryWeaponsInMilitaryBase" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryWeaponsInMilitaryBase_Result)">
+      <Parameter Name="MilitaryBaseId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSubordinationChain" ReturnType="Collection(Military_District_Information_SystemModel.GetSubordinationChain_Result)">
+      <Parameter Name="soldierId" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -851,22 +1018,34 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <EntitySet Name="CategoryOfMilitaryWeapon" EntityType="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon" />
-    <EntitySet Name="KindOfMilitaryWeapon_" EntityType="Military_District_Information_SystemModel.KindOfMilitaryWeapon_" />
-    <EntitySet Name="MilitaryWeapon" EntityType="Military_District_Information_SystemModel.MilitaryWeapon" />
-    <AssociationSet Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" Association="Military_District_Information_SystemModel.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
-      <End Role="CategoryOfMilitaryWeapon" EntitySet="CategoryOfMilitaryWeapon" />
-      <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_" Association="Military_District_Information_SystemModel.FK_MilitaryWeapon_KindOfMilitaryWeapon_">
-      <End Role="KindOfMilitaryWeapon_" EntitySet="KindOfMilitaryWeapon_" />
-      <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" Association="Military_District_Information_SystemModel.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon">
-      <End Role="MilitaryWeapon" EntitySet="MilitaryWeapon" />
-      <End Role="MilitaryWeaponsInMilitaryBase" EntitySet="MilitaryWeaponsInMilitaryBase" />
-    </AssociationSet>
   </EntityContainer>
+  <ComplexType Name="GetMilitaryBasesWithEquipment_Result">
+    <Property Type="Int32" Name="Код_военной_части" Nullable="false" />
+    <Property Type="String" Name="Название_военной_части" Nullable="true" />
+    <Property Type="Int32" Name="Код_техники" Nullable="false" />
+    <Property Type="String" Name="Название_техники" Nullable="true" />
+    <Property Type="Int32" Name="Количество_единиц_техники_в_части" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMilitaryBasesWithWeapon_Result">
+    <Property Type="Int32" Name="Код_военной_части" Nullable="false" />
+    <Property Type="String" Name="Название_военной_части" Nullable="true" />
+    <Property Type="Int32" Name="Код_вооружения" Nullable="false" />
+    <Property Type="String" Name="Название_вооружения" Nullable="true" />
+    <Property Type="Int32" Name="Количество_единиц_вооружения_в_части" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMilitaryWeaponsInMilitaryBase_Result">
+    <Property Type="Int32" Name="Код_военной_части" Nullable="false" />
+    <Property Type="String" Name="Название_военной_части" Nullable="true" />
+    <Property Type="Int32" Name="Код_вооружения" Nullable="false" />
+    <Property Type="String" Name="Название_вооружения" Nullable="true" />
+    <Property Type="Int32" Name="Количество_единиц_вооружения_в_части" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSubordinationChain_Result">
+    <Property Type="String" Name="Фамилия" Nullable="true" />
+    <Property Type="String" Name="Имя" Nullable="true" />
+    <Property Type="String" Name="Отчество" Nullable="true" />
+    <Property Type="String" Name="Звание" Nullable="true" />
+  </ComplexType>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />
@@ -878,68 +1057,4 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
-  <EntityType Name="CategoryOfMilitaryWeapon">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="KindOfMilitaryWeapon_" Relationship="Military_District_Information_SystemModel.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" FromRole="CategoryOfMilitaryWeapon" ToRole="KindOfMilitaryWeapon_" />
-  </EntityType>
-  <EntityType Name="KindOfMilitaryWeapon_">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CategoryOfMilitaryWeaponId" Type="Int32" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CategoryOfMilitaryWeapon" Relationship="Military_District_Information_SystemModel.FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon" FromRole="KindOfMilitaryWeapon_" ToRole="CategoryOfMilitaryWeapon" />
-    <NavigationProperty Name="MilitaryWeapon" Relationship="Military_District_Information_SystemModel.FK_MilitaryWeapon_KindOfMilitaryWeapon_" FromRole="KindOfMilitaryWeapon_" ToRole="MilitaryWeapon" />
-  </EntityType>
-  <EntityType Name="MilitaryWeapon">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="KindOfMilitaryWeaponId" Type="Int32" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="KindOfMilitaryWeapon_" Relationship="Military_District_Information_SystemModel.FK_MilitaryWeapon_KindOfMilitaryWeapon_" FromRole="MilitaryWeapon" ToRole="KindOfMilitaryWeapon_" />
-    <NavigationProperty Name="MilitaryWeaponsInMilitaryBase" Relationship="Military_District_Information_SystemModel.FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon" FromRole="MilitaryWeapon" ToRole="MilitaryWeaponsInMilitaryBase" />
-  </EntityType>
-  <Association Name="FK_KindOfMilitaryWeapon__CategoryOfMilitaryWeapon">
-    <End Type="Military_District_Information_SystemModel.CategoryOfMilitaryWeapon" Role="CategoryOfMilitaryWeapon" Multiplicity="0..1" />
-    <End Type="Military_District_Information_SystemModel.KindOfMilitaryWeapon_" Role="KindOfMilitaryWeapon_" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CategoryOfMilitaryWeapon">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="KindOfMilitaryWeapon_">
-        <PropertyRef Name="CategoryOfMilitaryWeaponId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MilitaryWeapon_KindOfMilitaryWeapon_">
-    <End Type="Military_District_Information_SystemModel.KindOfMilitaryWeapon_" Role="KindOfMilitaryWeapon_" Multiplicity="0..1" />
-    <End Type="Military_District_Information_SystemModel.MilitaryWeapon" Role="MilitaryWeapon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KindOfMilitaryWeapon_">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="MilitaryWeapon">
-        <PropertyRef Name="KindOfMilitaryWeaponId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MilitaryWeaponsInMilitaryBase_MilitaryWeapon">
-    <End Type="Military_District_Information_SystemModel.MilitaryWeapon" Role="MilitaryWeapon" Multiplicity="0..1" />
-    <End Type="Military_District_Information_SystemModel.MilitaryWeaponsInMilitaryBase" Role="MilitaryWeaponsInMilitaryBase" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MilitaryWeapon">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="MilitaryWeaponsInMilitaryBase">
-        <PropertyRef Name="MilitaryWeaponId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

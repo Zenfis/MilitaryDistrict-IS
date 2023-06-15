@@ -25,6 +25,7 @@
                 <DataGridTextColumn Header="Код части округа" Binding="{Binding PartsOfMilDistrId}" Width="*"/>
                 <DataGridTextColumn Header="Код командира" Binding="{Binding CommanderId}" Width="*"/>
                 <DataGridTextColumn Header="Код армии" Binding="{Binding ArmyId}" Width="*"/>
+                <DataGridTextColumn Header="Код военной базы" Binding="{Binding MilitaryBaseId}" Width="*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

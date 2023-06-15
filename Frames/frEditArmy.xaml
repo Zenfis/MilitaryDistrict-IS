@@ -22,10 +22,12 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
-        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Название армии" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="1" Margin="163,6,0,0" Width="150"/>
-        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding Name}" Grid.Row="2" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26"  Width="310" Margin="0,0,0,20" HorizontalAlignment="Center">
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Название армии" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Margin="163,11,0,0" Width="150"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding Name}" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26"  Width="310" Margin="0,35,0,55" HorizontalAlignment="Center" Grid.RowSpan="3">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -33,8 +35,8 @@
             </TextBox.Resources>
         </TextBox>
 
-        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код части округа" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="3" Margin="163,6,0,0" Width="31"/>
-        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding PartsOfMilDistrId}" Grid.Row="4" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,0,0,20" HorizontalAlignment="Center">
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код части округа" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="2" Margin="163,26,0,0" Width="31"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding PartsOfMilDistrId}" Grid.Row="2" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,50,0,0" HorizontalAlignment="Center" Grid.RowSpan="2">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -42,8 +44,8 @@
             </TextBox.Resources>
         </TextBox>
 
-        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код командира" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="5" Margin="163,6,0,0" Width="31"/>
-        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding CommanderId}" Grid.Row="6" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,0,0,20" HorizontalAlignment="Center">
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код командира" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="4" Margin="163,20,0,0" Width="31"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding CommanderId}" Grid.Row="4" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,45,0,5" HorizontalAlignment="Center" Grid.RowSpan="2">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -51,7 +53,16 @@
             </TextBox.Resources>
         </TextBox>
 
-        <Button Content="Сохранить" Grid.Row="7" HorizontalAlignment="Center" FontFamily="Open Sans Light" Name="SaveArmy" Margin="0,10,0,90" Width="116" Height="40" Grid.Column="1" Click="SaveArmy_Click">
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Text="Код военной базы" Foreground="Black" FontSize="16" MinWidth="150" MinHeight="15" Height="15" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Open Sans Semibold" FontWeight="Bold" Grid.Row="6" Margin="163,16,0,0" Width="31"/>
+        <TextBox Grid.Column="1" TextAlignment="Left" Text="{Binding MilitaryBaseId}" Grid.Row="6" MinHeight="40" Height="40" FontFamily="Open Sans Light" FontSize="26" Width="310" Margin="0,40,0,40" HorizontalAlignment="Center" Grid.RowSpan="2">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Button Content="Сохранить" Grid.Row="4" HorizontalAlignment="Left" FontFamily="Open Sans Light" Name="SaveArmy" Margin="520,10,0,10" Width="116" Height="40" Grid.Column="1" Click="SaveArmy_Click" Grid.ColumnSpan="2">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="6"/>

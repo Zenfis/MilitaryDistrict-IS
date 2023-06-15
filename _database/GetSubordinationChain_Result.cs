@@ -10,19 +10,12 @@
 namespace MilitaryDistrict_IS._database
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Brigade
+    public partial class GetSubordinationChain_Result
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> PartsOfMilDistrId { get; set; }
-        public Nullable<int> CommanderId { get; set; }
-        public Nullable<int> DivisionId { get; set; }
-        public Nullable<int> MilitaryBaseId { get; set; }
-    
-        public virtual Division Division { get; set; }
-        public virtual MilitaryBase MilitaryBase { get; set; }
-        public virtual PartsOfMilitaryDistrict PartsOfMilitaryDistrict { get; set; }
+        public string Фамилия { get; set; }
+        public string Имя { get; set; }
+        public string Отчество { get; set; }
+        public string Звание { get; set; }
     }
 }
