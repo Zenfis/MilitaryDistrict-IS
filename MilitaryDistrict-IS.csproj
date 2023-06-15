@@ -243,6 +243,9 @@
     <Compile Include="_database\Brigade.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="_database\Brigade.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="_database\CategoriesOfRank.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
@@ -252,7 +255,16 @@
     <Compile Include="_database\CategoryOfMilitaryWeapon.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="_database\CategoryOfMilitaryWeapon.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="_database\Commander.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Commander.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\Company.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\Company.cs">
@@ -277,6 +289,9 @@
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\GetMilitaryBasesWithWeapon_Result.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\GetMilitaryWeaponsInMilitaryBase_Result.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\GetMilitaryWeaponsInMilitaryBase_Result.cs">
@@ -307,10 +322,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="_database\MilitaryDistrictDataBase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="_database\MilitaryDistrictDataBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryDistrictDataBase1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="_database\MilitaryEquipment.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\MilitaryEquipment.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
@@ -322,6 +350,9 @@
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\MilitaryWeaponsInMilitaryBase.cs">
+      <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="_database\PartsOfMilitaryDistrict.cs">
       <DependentUpon>MilitaryDistrictDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="_database\PartsOfMilitaryDistrict.cs">
@@ -623,7 +654,7 @@
     </None>
     <EntityDeploy Include="_database\MilitaryDistrictDataBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MilitaryDistrictDataBase.Designer.cs</LastGenOutput>
+      <LastGenOutput>MilitaryDistrictDataBase1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="_database\MilitaryDistrictDataBase.edmx.diagram">
       <DependentUpon>MilitaryDistrictDataBase.edmx</DependentUpon>

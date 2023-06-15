@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="023d2d90196f43a08f436eb899067236" Name="Diagram1" ZoomLevel="47">
+      <Diagram DiagramId="023d2d90196f43a08f436eb899067236" Name="Diagram1" ZoomLevel="52">
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Army" Width="1.5" PointX="12.75" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.Brigade" Width="1.5" PointX="20.5" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Military_District_Information_SystemModel.CategoriesOfRank" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
