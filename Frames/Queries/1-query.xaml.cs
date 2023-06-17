@@ -116,14 +116,18 @@ namespace MilitaryDistrict_IS.Frames.Queries
 
         private void availableQueries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (availableQueries.SelectedIndex == 0) { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }          //1
-            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetMilitaryBasesWithWeapon"; value = "@WeaponId"; table = " MilitaryWeapon"; }               //4
-            else if (availableQueries.SelectedIndex == 2) { storedProcedureName = "getCommandersAtMilitaryBase"; value = "@commanderId"; table = " Commander"; }                //5.1
-            else if (availableQueries.SelectedIndex == 3) { storedProcedureName = "getCommandersAtArmy"; value = "@commanderId"; table = " Commander"; }                        //5.2
-            else if (availableQueries.SelectedIndex == 4) { storedProcedureName = "getCommandersAtDivision"; value = "@commanderId"; table = " Commander"; }                    //5.3
-            else if (availableQueries.SelectedIndex == 5) { storedProcedureName = "getCommandersAtCorps"; value = "@commanderId"; table = " Commander"; }                       //5.4
-            else if (availableQueries.SelectedIndex == 6) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                          //8
-            else if (availableQueries.SelectedIndex == 7) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }       //11
+            if (availableQueries.SelectedIndex == 0) { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }                          //1
+            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetMilitaryBasesWithWeapon"; value = "@WeaponId"; table = " MilitaryWeapon"; }                               //4
+            else if (availableQueries.SelectedIndex == 2) { storedProcedureName = "getCommandersAtMilitaryBase"; value = "@commanderId"; table = " Commander"; }                                //5.1
+            else if (availableQueries.SelectedIndex == 3) { storedProcedureName = "getCommandersAtArmy"; value = "@commanderId"; table = " Commander"; }                                        //5.2
+            else if (availableQueries.SelectedIndex == 4) { storedProcedureName = "getCommandersAtDivision"; value = "@commanderId"; table = " Commander"; }                                    //5.3
+            else if (availableQueries.SelectedIndex == 5) { storedProcedureName = "getCommandersAtCorps"; value = "@commanderId"; table = " Commander"; }                                       //5.4
+            else if (availableQueries.SelectedIndex == 6) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                                          //8
+            else if (availableQueries.SelectedIndex == 7) { storedProcedureName = "getPlacesOfDeploymentOfMiltaryBase"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }        //9.1
+            else if (availableQueries.SelectedIndex == 8) { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }               //9.2
+            else if (availableQueries.SelectedIndex == 9) { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }           //9.3
+            else if (availableQueries.SelectedIndex == 10) { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }             //9.4
+            else if (availableQueries.SelectedIndex == 11) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
             availableItems.Items.Clear();
             FillComboBox();
             availableItems.SelectedIndex = 0;
