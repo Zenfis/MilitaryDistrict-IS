@@ -144,7 +144,8 @@ namespace MilitaryDistrict_IS.Frames.Queries
             else if (availableQueries.SelectedIndex == 16) { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }              //9.2
             else if (availableQueries.SelectedIndex == 17) { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }          //9.3
             else if (availableQueries.SelectedIndex == 18) { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }             //9.4
-            else if (availableQueries.SelectedIndex == 19) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
+            else if (availableQueries.SelectedIndex == 19) { storedProcedureName = "getMilitaryEquipmentInMilitaryDistrict"; value = "@districtId"; table = " MilitaryDistrict"; }             //10
+            else if (availableQueries.SelectedIndex == 20) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
             availableItems.Items.Clear();
             FillComboBox();
             availableItems.SelectedIndex = 0;

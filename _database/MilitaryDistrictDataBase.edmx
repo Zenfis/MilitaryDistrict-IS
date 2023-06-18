@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Military_District_Information_SystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Military_District_Information_SystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Army">
           <Key>
             <PropertyRef Name="Id" />
@@ -139,6 +139,7 @@
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="CommanderId" Type="int" />
           <Property Name="PlacesOfDeploymentId" Type="int" />
+          <Property Name="PartsOfMilDistrId" Type="int" />
         </EntityType>
         <EntityType Name="MilitaryDistrict">
           <Key>
@@ -514,6 +515,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MilitaryBase_PartsOfMilitaryDistrict">
+          <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
+          <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartsOfMilitaryDistrict">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MilitaryBase">
+              <PropertyRef Name="PartsOfMilDistrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MilitaryBase_PlacesOfDeployment">
           <End Role="PlacesOfDeployment" Type="Self.PlacesOfDeployment" Multiplicity="0..1" />
           <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="*" />
@@ -878,6 +891,10 @@
             <End Role="Commander" EntitySet="Commander" />
             <End Role="MilitaryBase" EntitySet="MilitaryBase" />
           </AssociationSet>
+          <AssociationSet Name="FK_MilitaryBase_PartsOfMilitaryDistrict" Association="Self.FK_MilitaryBase_PartsOfMilitaryDistrict">
+            <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
+            <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+          </AssociationSet>
           <AssociationSet Name="FK_MilitaryBase_PlacesOfDeployment" Association="Self.FK_MilitaryBase_PlacesOfDeployment">
             <End Role="PlacesOfDeployment" EntitySet="PlacesOfDeployment" />
             <End Role="MilitaryBase" EntitySet="MilitaryBase" />
@@ -947,8 +964,7 @@
             <End Role="SpecialtyOfSoldier" EntitySet="SpecialtyOfSoldier" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Military_District_Information_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1135,6 +1151,8 @@
           <NavigationProperty Name="MilitaryEquipmentsInMilitaryBase" Relationship="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryEquipmentsInMilitaryBase" />
           <NavigationProperty Name="MilitaryWeaponsInMilitaryBase" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryWeaponsInMilitaryBase" />
           <NavigationProperty Name="Platoon" Relationship="Self.FK_Platoon_MilitaryBase" FromRole="MilitaryBase" ToRole="Platoon" />
+          <Property Name="PartsOfMilDistrId" Type="Int32" />
+          <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict" FromRole="MilitaryBase" ToRole="PartsOfMilitaryDistrict" />
         </EntityType>
         <EntityType Name="MilitaryDistrict">
           <Key>
@@ -1199,6 +1217,7 @@
           <NavigationProperty Name="Corps" Relationship="Self.FK_Corps_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="Corps" />
           <NavigationProperty Name="Division" Relationship="Self.FK_Division_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="Division" />
           <NavigationProperty Name="MilitaryDistrict" Relationship="Self.FK_PartsOfMilitaryDistrict_MilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="MilitaryDistrict" />
+          <NavigationProperty Name="MilitaryBase" Relationship="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="MilitaryBase" />
         </EntityType>
         <EntityType Name="PlacesOfDeployment">
           <Key>
@@ -1929,16 +1948,16 @@
             <End Role="SpecialtyOfSoldier" EntitySet="SpecialtyOfSoldier" />
           </AssociationSet>
           <FunctionImport Name="GetMilitaryBasesWithEquipment" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryBasesWithEquipment_Result)">
-            <Parameter Name="EquipmentId" Mode="In" Type="Int32" />
+          <Parameter Name="EquipmentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMilitaryBasesWithWeapon" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryBasesWithWeapon_Result)">
-            <Parameter Name="WeaponId" Mode="In" Type="Int32" />
+          <Parameter Name="WeaponId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetMilitaryWeaponsInMilitaryBase" ReturnType="Collection(Military_District_Information_SystemModel.GetMilitaryWeaponsInMilitaryBase_Result)">
-            <Parameter Name="MilitaryBaseId" Mode="In" Type="Int32" />
+          <Parameter Name="MilitaryBaseId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSubordinationChain" ReturnType="Collection(Military_District_Information_SystemModel.GetSubordinationChain_Result)">
-            <Parameter Name="soldierId" Mode="In" Type="Int32" />
+          <Parameter Name="soldierId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -1970,6 +1989,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="FK_MilitaryBase_PartsOfMilitaryDistrict" Association="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict">
+            <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
+            <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="GetMilitaryBasesWithEquipment_Result">
           <Property Type="Int32" Name="Код_военной_части" Nullable="false" />
@@ -2009,6 +2032,18 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <Association Name="FK_MilitaryBase_PartsOfMilitaryDistrict">
+          <End Type="Military_District_Information_SystemModel.PartsOfMilitaryDistrict" Role="PartsOfMilitaryDistrict" Multiplicity="0..1" />
+          <End Type="Military_District_Information_SystemModel.MilitaryBase" Role="MilitaryBase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartsOfMilitaryDistrict">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MilitaryBase">
+              <PropertyRef Name="PartsOfMilDistrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2158,6 +2193,7 @@
           <EntitySetMapping Name="MilitaryBase">
             <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryBase">
               <MappingFragment StoreEntitySet="MilitaryBase">
+                <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />

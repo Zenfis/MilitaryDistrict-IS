@@ -183,6 +183,8 @@
     <NavigationProperty Name="MilitaryEquipmentsInMilitaryBase" Relationship="Self.FK_MilitaryEquipmentsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryEquipmentsInMilitaryBase" />
     <NavigationProperty Name="MilitaryWeaponsInMilitaryBase" Relationship="Self.FK_MilitaryWeaponsInMilitaryBase_MilitaryBase" FromRole="MilitaryBase" ToRole="MilitaryWeaponsInMilitaryBase" />
     <NavigationProperty Name="Platoon" Relationship="Self.FK_Platoon_MilitaryBase" FromRole="MilitaryBase" ToRole="Platoon" />
+    <Property Name="PartsOfMilDistrId" Type="Int32" />
+    <NavigationProperty Name="PartsOfMilitaryDistrict" Relationship="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict" FromRole="MilitaryBase" ToRole="PartsOfMilitaryDistrict" />
   </EntityType>
   <EntityType Name="MilitaryDistrict">
     <Key>
@@ -247,6 +249,7 @@
     <NavigationProperty Name="Corps" Relationship="Self.FK_Corps_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="Corps" />
     <NavigationProperty Name="Division" Relationship="Self.FK_Division_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="Division" />
     <NavigationProperty Name="MilitaryDistrict" Relationship="Self.FK_PartsOfMilitaryDistrict_MilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="MilitaryDistrict" />
+    <NavigationProperty Name="MilitaryBase" Relationship="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict" FromRole="PartsOfMilitaryDistrict" ToRole="MilitaryBase" />
   </EntityType>
   <EntityType Name="PlacesOfDeployment">
     <Key>
@@ -1018,6 +1021,10 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_MilitaryBase_PartsOfMilitaryDistrict" Association="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict">
+      <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="GetMilitaryBasesWithEquipment_Result">
     <Property Type="Int32" Name="Код_военной_части" Nullable="false" />
@@ -1057,4 +1064,16 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <Association Name="FK_MilitaryBase_PartsOfMilitaryDistrict">
+    <End Type="Military_District_Information_SystemModel.PartsOfMilitaryDistrict" Role="PartsOfMilitaryDistrict" Multiplicity="0..1" />
+    <End Type="Military_District_Information_SystemModel.MilitaryBase" Role="MilitaryBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartsOfMilitaryDistrict">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MilitaryBase">
+        <PropertyRef Name="PartsOfMilDistrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

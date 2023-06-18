@@ -144,6 +144,7 @@
     <EntitySetMapping Name="MilitaryBase">
       <EntityTypeMapping TypeName="Military_District_Information_SystemModel.MilitaryBase">
         <MappingFragment StoreEntitySet="MilitaryBase">
+          <ScalarProperty Name="PartsOfMilDistrId" ColumnName="PartsOfMilDistrId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CommanderId" ColumnName="CommanderId" />

@@ -21,6 +21,7 @@ namespace MilitaryDistrict_IS._database
             this.Brigade = new HashSet<Brigade>();
             this.Corps = new HashSet<Corps>();
             this.Division = new HashSet<Division>();
+            this.MilitaryBase = new HashSet<MilitaryBase>();
         }
     
         public int Id { get; set; }
@@ -35,5 +36,7 @@ namespace MilitaryDistrict_IS._database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Division> Division { get; set; }
         public virtual MilitaryDistrict MilitaryDistrict { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MilitaryBase> MilitaryBase { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace MilitaryDistrict_IS._database
         public string Name { get; set; }
         public Nullable<int> CommanderId { get; set; }
         public Nullable<int> PlacesOfDeploymentId { get; set; }
+        public Nullable<int> PartsOfMilDistrId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Army> Army { get; set; }
@@ -56,5 +57,6 @@ namespace MilitaryDistrict_IS._database
         public virtual ICollection<MilitaryWeaponsInMilitaryBase> MilitaryWeaponsInMilitaryBase { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Platoon> Platoon { get; set; }
+        public virtual PartsOfMilitaryDistrict PartsOfMilitaryDistrict { get; set; }
     }
 }

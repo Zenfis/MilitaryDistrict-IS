@@ -44,6 +44,7 @@
             <ComboBoxItem Content="9.2 Получить перечень всех армий указанного места дислокации"/>
             <ComboBoxItem Content="9.3 Получить перечень всех дивизий чатстей указанного места дислокации"/>
             <ComboBoxItem Content="9.4 Получить перечень всех корпусов чатстей указанного места дислокации"/>
+            <ComboBoxItem Content="10. Получить данные о наличии военной техники в указанном военном округе"/>
             <ComboBoxItem Content="11. Получить перечень военных частей, в которых число единиц указанного вида боевой техники больше 5 (нет указанной боевой техники)"/>
         </ComboBox>
         <ComboBox x:Name="availableItems" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectionChanged="availabeItems_SelectionChanged"/>

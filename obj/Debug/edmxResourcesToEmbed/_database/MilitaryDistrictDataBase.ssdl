@@ -134,6 +134,7 @@
     <Property Name="Name" Type="varchar(max)" />
     <Property Name="CommanderId" Type="int" />
     <Property Name="PlacesOfDeploymentId" Type="int" />
+    <Property Name="PartsOfMilDistrId" Type="int" />
   </EntityType>
   <EntityType Name="MilitaryDistrict">
     <Key>
@@ -509,6 +510,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MilitaryBase_PartsOfMilitaryDistrict">
+    <End Role="PartsOfMilitaryDistrict" Type="Self.PartsOfMilitaryDistrict" Multiplicity="0..1" />
+    <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartsOfMilitaryDistrict">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MilitaryBase">
+        <PropertyRef Name="PartsOfMilDistrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_MilitaryBase_PlacesOfDeployment">
     <End Role="PlacesOfDeployment" Type="Self.PlacesOfDeployment" Multiplicity="0..1" />
     <End Role="MilitaryBase" Type="Self.MilitaryBase" Multiplicity="*" />
@@ -871,6 +884,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_MilitaryBase_Commander" Association="Self.FK_MilitaryBase_Commander">
       <End Role="Commander" EntitySet="Commander" />
+      <End Role="MilitaryBase" EntitySet="MilitaryBase" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MilitaryBase_PartsOfMilitaryDistrict" Association="Self.FK_MilitaryBase_PartsOfMilitaryDistrict">
+      <End Role="PartsOfMilitaryDistrict" EntitySet="PartsOfMilitaryDistrict" />
       <End Role="MilitaryBase" EntitySet="MilitaryBase" />
     </AssociationSet>
     <AssociationSet Name="FK_MilitaryBase_PlacesOfDeployment" Association="Self.FK_MilitaryBase_PlacesOfDeployment">

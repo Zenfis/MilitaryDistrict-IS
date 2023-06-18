@@ -72,6 +72,7 @@
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_Soldier_Rank" ManuallyRouted="false" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_SpecialtyOfSoldier_Soldier" ManuallyRouted="false" />
         <AssociationConnector Association="Military_District_Information_SystemModel.FK_SpecialtyOfSoldier_Specialty" ManuallyRouted="false" />
+        <AssociationConnector Association="Military_District_Information_SystemModel.FK_MilitaryBase_PartsOfMilitaryDistrict" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
