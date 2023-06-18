@@ -91,7 +91,15 @@ namespace MilitaryDistrict_IS.Frames.Queries
         private void FillComboBox()
         {
             string str = " Id ";
-            string sqlQuery = "SELECT"+str+"FROM"+table;
+            string sqlQuery;
+            if (availableQueries.SelectedIndex == 6 || 
+                availableQueries.SelectedIndex == 7 || 
+                availableQueries.SelectedIndex == 8 || 
+                availableQueries.SelectedIndex == 9)
+            {
+                sqlQuery = "SELECT" + str + "FROM" + table + "WHERE" + str + "<=6" ;
+            }
+            else sqlQuery = "SELECT"+str+"FROM"+table;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -122,12 +130,16 @@ namespace MilitaryDistrict_IS.Frames.Queries
             else if (availableQueries.SelectedIndex == 3) { storedProcedureName = "getCommandersAtArmy"; value = "@commanderId"; table = " Commander"; }                                        //5.2
             else if (availableQueries.SelectedIndex == 4) { storedProcedureName = "getCommandersAtDivision"; value = "@commanderId"; table = " Commander"; }                                    //5.3
             else if (availableQueries.SelectedIndex == 5) { storedProcedureName = "getCommandersAtCorps"; value = "@commanderId"; table = " Commander"; }                                       //5.4
-            else if (availableQueries.SelectedIndex == 6) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                                          //8
-            else if (availableQueries.SelectedIndex == 7) { storedProcedureName = "getPlacesOfDeploymentOfMiltaryBase"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }        //9.1
-            else if (availableQueries.SelectedIndex == 8) { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }               //9.2
-            else if (availableQueries.SelectedIndex == 9) { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }           //9.3
-            else if (availableQueries.SelectedIndex == 10) { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }             //9.4
-            else if (availableQueries.SelectedIndex == 11) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
+            else if (availableQueries.SelectedIndex == 6) { storedProcedureName = "getOfficersInMilitaryBase"; value = "@rank"; table = " Rank "; }                                              //6.1
+            else if (availableQueries.SelectedIndex == 7) { storedProcedureName = "getOfficersInArmy"; value = "@rank"; table = " Rank "; }                                                      //6.2
+            else if (availableQueries.SelectedIndex == 8) { storedProcedureName = "getOfficersInDivision"; value = "@rank"; table = " Rank "; }                                                  //6.3
+            else if (availableQueries.SelectedIndex == 9) { storedProcedureName = "getOfficersInCorps"; value = "@rank"; table = " Rank "; }                                                     //6.4
+            else if (availableQueries.SelectedIndex == 10) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                                         //8
+            else if (availableQueries.SelectedIndex == 11) { storedProcedureName = "getPlacesOfDeploymentOfMiltaryBase"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }       //9.1
+            else if (availableQueries.SelectedIndex == 12) { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }              //9.2
+            else if (availableQueries.SelectedIndex == 13) { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }          //9.3
+            else if (availableQueries.SelectedIndex == 14) { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }             //9.4
+            else if (availableQueries.SelectedIndex == 15) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
             availableItems.Items.Clear();
             FillComboBox();
             availableItems.SelectedIndex = 0;
