@@ -92,14 +92,14 @@ namespace MilitaryDistrict_IS.Frames.Queries
         {
             string str = " Id ";
             string sqlQuery;
-            if (availableQueries.SelectedIndex == 6 || 
-                availableQueries.SelectedIndex == 7 || 
-                availableQueries.SelectedIndex == 8 || 
-                availableQueries.SelectedIndex == 9) { sqlQuery = "SELECT" + str + "FROM" + table + " " + "WHERE" + str + "<=6" ; }
-            else if (availableQueries.SelectedIndex == 10 ||
-                availableQueries.SelectedIndex == 11 ||
-                availableQueries.SelectedIndex == 12 ||
-                availableQueries.SelectedIndex == 13) { sqlQuery = "SELECT" + str + "FROM" + table + " " + "WHERE" + str + ">=7"; }
+            if (availableQueries.SelectedIndex == 16 || 
+                availableQueries.SelectedIndex == 17 || 
+                availableQueries.SelectedIndex == 18 || 
+                availableQueries.SelectedIndex == 19) { sqlQuery = "SELECT" + str + "FROM" + table + " " + "WHERE" + str + "<=6" ; }
+            else if (availableQueries.SelectedIndex == 20 ||
+                availableQueries.SelectedIndex == 21 ||
+                availableQueries.SelectedIndex == 22 ||
+                availableQueries.SelectedIndex == 23) { sqlQuery = "SELECT" + str + "FROM" + table + " " + "WHERE" + str + ">=7"; }
             else sqlQuery = "SELECT"+str+"FROM"+table;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -125,27 +125,37 @@ namespace MilitaryDistrict_IS.Frames.Queries
 
         private void availableQueries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (availableQueries.SelectedIndex == 0) { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }                          //1
-            else if (availableQueries.SelectedIndex == 1) { storedProcedureName = "GetMilitaryBasesWithWeapon"; value = "@WeaponId"; table = " MilitaryWeapon"; }                               //4
-            else if (availableQueries.SelectedIndex == 2) { storedProcedureName = "getCommandersAtMilitaryBase"; value = "@commanderId"; table = " Commander"; }                                //5.1
-            else if (availableQueries.SelectedIndex == 3) { storedProcedureName = "getCommandersAtArmy"; value = "@commanderId"; table = " Commander"; }                                        //5.2
-            else if (availableQueries.SelectedIndex == 4) { storedProcedureName = "getCommandersAtDivision"; value = "@commanderId"; table = " Commander"; }                                    //5.3
-            else if (availableQueries.SelectedIndex == 5) { storedProcedureName = "getCommandersAtCorps"; value = "@commanderId"; table = " Commander"; }                                       //5.4
-            else if (availableQueries.SelectedIndex == 6) { storedProcedureName = "getOfficersInMilitaryBase"; value = "@rank"; table = " Rank"; }                                              //6.1
-            else if (availableQueries.SelectedIndex == 7) { storedProcedureName = "getOfficersInArmy"; value = "@rank"; table = " Rank"; }                                                      //6.2
-            else if (availableQueries.SelectedIndex == 8) { storedProcedureName = "getOfficersInDivision"; value = "@rank"; table = " Rank"; }                                                  //6.3
-            else if (availableQueries.SelectedIndex == 9) { storedProcedureName = "getOfficersInCorps"; value = "@rank"; table = " Rank"; }                                                     //6.4
-            else if (availableQueries.SelectedIndex == 10) { storedProcedureName = "getLowerRanksInMilitaryBase"; value = "@rank"; table = " Rank"; }                                            //7.1
-            else if (availableQueries.SelectedIndex == 11) { storedProcedureName = "getLowerRanksInArmy"; value = "@rank"; table = " Rank"; }                                                    //7.2
-            else if (availableQueries.SelectedIndex == 12) { storedProcedureName = "getLowerRanksInDivision"; value = "@rank"; table = " Rank"; }                                                //7.3
-            else if (availableQueries.SelectedIndex == 13) { storedProcedureName = "getLowerRanksInCorps"; value = "@rank"; table = " Rank"; }                                                   //7.4
-            else if (availableQueries.SelectedIndex == 14) { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                                         //8
-            else if (availableQueries.SelectedIndex == 15) { storedProcedureName = "getPlacesOfDeploymentOfMiltaryBase"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }       //9.1
-            else if (availableQueries.SelectedIndex == 16) { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }              //9.2
-            else if (availableQueries.SelectedIndex == 17) { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }          //9.3
-            else if (availableQueries.SelectedIndex == 18) { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }             //9.4
-            else if (availableQueries.SelectedIndex == 19) { storedProcedureName = "getMilitaryEquipmentInMilitaryDistrict"; value = "@districtId"; table = " MilitaryDistrict"; }             //10
-            else if (availableQueries.SelectedIndex == 20) { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                      //11
+            if (availableQueries.SelectedIndex == 0)        { storedProcedureName = "GetMilitaryWeaponsInMilitaryBase"; value = "@MilitaryBaseId"; table = " MilitaryBase"; }                     //1
+            if (availableQueries.SelectedIndex == 1)        { storedProcedureName = "getSpecialtiesInMilitaryDistrict"; value = "@militaryDistrictId"; table = " MilitaryDistrict"; }             //2.1
+            if (availableQueries.SelectedIndex == 2)        { storedProcedureName = "getSpecialtiesInMilitaryBase"; value = "@militaryBaseId"; table = " MilitaryBase"; }                         //2.2
+            if (availableQueries.SelectedIndex == 3)        { storedProcedureName = "getSpecialtiesInArmy"; value = "@armyId"; table = " Army"; }                                                 //2.3
+            if (availableQueries.SelectedIndex == 4)        { storedProcedureName = "getSpecialtiesInDivision"; value = "@divisionId"; table = " Division"; }                                     //2.4
+            if (availableQueries.SelectedIndex == 5)        { storedProcedureName = "getSpecialtiesInCorps"; value = "@specialtyId"; table = " Corps"; }                                          //2.5
+            if (availableQueries.SelectedIndex == 6)        { storedProcedureName = "getSoldiersWspecialtiesInMilitaryBase"; value = "@specialtyId"; table = " Specialty"; }                      //3.1
+            if (availableQueries.SelectedIndex == 7)        { storedProcedureName = "getSoldiersWspecialtiesInMilitaryDistrict"; value = "@specialtyId"; table = " Specialty"; }                  //3.2
+            if (availableQueries.SelectedIndex == 8)        { storedProcedureName = "getSoldiersWspecialtiesInArmy"; value = "@specialtyId"; table = " Specialty"; }                              //3.3
+            if (availableQueries.SelectedIndex == 9)        { storedProcedureName = "getSoldiersWspecialtiesInCorps"; value = "@specialtyId"; table = " Specialty"; }                             //3.4
+            if (availableQueries.SelectedIndex == 10)       { storedProcedureName = "getSoldiersWspecialtiesInDivision"; value = "@specialtyId"; table = " Specialty"; }                          //3.5
+            else if (availableQueries.SelectedIndex == 11)  { storedProcedureName = "GetMilitaryBasesWithWeapon"; value = "@WeaponId"; table = " MilitaryWeapon"; }                               //4
+            else if (availableQueries.SelectedIndex == 12)  { storedProcedureName = "getCommandersAtMilitaryBase"; value = "@commanderId"; table = " Commander"; }                                //5.1
+            else if (availableQueries.SelectedIndex == 13)  { storedProcedureName = "getCommandersAtArmy"; value = "@commanderId"; table = " Commander"; }                                        //5.2
+            else if (availableQueries.SelectedIndex == 14)  { storedProcedureName = "getCommandersAtDivision"; value = "@commanderId"; table = " Commander"; }                                    //5.3
+            else if (availableQueries.SelectedIndex == 15)  { storedProcedureName = "getCommandersAtCorps"; value = "@commanderId"; table = " Commander"; }                                       //5.4
+            else if (availableQueries.SelectedIndex == 16)  { storedProcedureName = "getOfficersInMilitaryBase"; value = "@rank"; table = " Rank"; }                                              //6.1
+            else if (availableQueries.SelectedIndex == 17)  { storedProcedureName = "getOfficersInArmy"; value = "@rank"; table = " Rank"; }                                                      //6.2
+            else if (availableQueries.SelectedIndex == 18)  { storedProcedureName = "getOfficersInDivision"; value = "@rank"; table = " Rank"; }                                                  //6.3
+            else if (availableQueries.SelectedIndex == 19)  { storedProcedureName = "getOfficersInCorps"; value = "@rank"; table = " Rank"; }                                                     //6.4
+            else if (availableQueries.SelectedIndex == 20)  { storedProcedureName = "getLowerRanksInMilitaryBase"; value = "@rank"; table = " Rank"; }                                            //7.1
+            else if (availableQueries.SelectedIndex == 21)  { storedProcedureName = "getLowerRanksInArmy"; value = "@rank"; table = " Rank"; }                                                    //7.2
+            else if (availableQueries.SelectedIndex == 22)  { storedProcedureName = "getLowerRanksInDivision"; value = "@rank"; table = " Rank"; }                                                //7.3
+            else if (availableQueries.SelectedIndex == 23)  { storedProcedureName = "getLowerRanksInCorps"; value = "@rank"; table = " Rank"; }                                                   //7.4
+            else if (availableQueries.SelectedIndex == 24)  { storedProcedureName = "GetSubordinationChain"; value = "@soldierId"; table = " Soldier"; }                                          //8
+            else if (availableQueries.SelectedIndex == 25)  { storedProcedureName = "getPlacesOfDeploymentOfMiltaryBase"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }        //9.1
+            else if (availableQueries.SelectedIndex == 26)  { storedProcedureName = "getPlacesOfDeploymentOfArmy"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }               //9.2
+            else if (availableQueries.SelectedIndex == 27)  { storedProcedureName = "getPlacesOfDeploymentOfDivision"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }           //9.3
+            else if (availableQueries.SelectedIndex == 28)  { storedProcedureName = "getPlacesOfDeploymentOfCorps"; value = "@placeOfDeploymentId"; table = " PlacesOfDeployment"; }              //9.4
+            else if (availableQueries.SelectedIndex == 29)  { storedProcedureName = "getMilitaryEquipmentInMilitaryDistrict"; value = "@districtId"; table = " MilitaryDistrict"; }               //10
+            else if (availableQueries.SelectedIndex == 30)  { storedProcedureName = "GetMilitaryBasesWithEquipment"; value = "EquipmentId"; table = " MilitaryEquipment"; }                       //11
             availableItems.Items.Clear();
             FillComboBox();
             availableItems.SelectedIndex = 0;
